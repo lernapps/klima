@@ -240,9 +240,24 @@ export function describe(task: Task, props: Props, _lang: string): { task: strin
   const zeilen = task.temperaturen.map(
     (grad, m) => `- ${t.monate[m] ?? ""}: ${zahl(grad)} °C, ${zahl(task.niederschlag[m] ?? 0)} mm`,
   );
+  const m = merkmale(task.temperaturen, task.niederschlag);
+  const jahreszeit =
+    m.jahreszeit > 0 ? "mehr im Sommerhalbjahr (April bis September)" : "mehr im Winterhalbjahr (Oktober bis März)";
+  const geprueft = [
+    `Dein Diagramm war plausibel, wenn diese sechs Merkmale zu ${task.name} passen (kleine Abweichungen sind erlaubt):`,
+    `- Jahresmittel der Temperatur: etwa ${zahl(Math.round(m.mittel * 10) / 10)} °C (höchstens ${TOLERANZ.mittel} °C daneben)`,
+    `- Spanne zwischen wärmstem und kältestem Monat: etwa ${zahl(Math.round(m.spanne))} K (höchstens ${TOLERANZ.spanne} K daneben)`,
+    `- Wärmster Monat: ${t.monate[m.warm] ?? ""}, kältester Monat: ${t.monate[m.kalt] ?? ""} (höchstens ${TOLERANZ.monate} Monat daneben)`,
+    `- Jahresniederschlag: etwa ${zahl(Math.round(m.summe))} mm (etwa ${Math.round(TOLERANZ.niederschlag * 100)} % daneben, mindestens 50 mm Spielraum)`,
+    `- Feuchte Monate: ${m.humide} (höchstens ${TOLERANZ.humide} daneben)`,
+    `- Jahreszeit des Regens: ${jahreszeit}`,
+    "",
+    `Zum Vergleich so sieht ein Diagramm von ${task.name} aus der Messung aus (es gibt mehr als eine plausible Zeichnung):`,
+    ...zeilen,
+  ];
   return {
     task: `${fuelle(t.task, werte)} ${fuelle(t.hinweise, werte)}`,
-    solution: zeilen.join("\n"),
+    solution: geprueft.join("\n"),
   };
 }
 
@@ -268,7 +283,7 @@ export const about = {
   task: "Das Kind bekommt nur Hinweise zu einem Ort (Breite, Höhe, Lage) und zeichnet, wie sein Klimadiagramm aussehen könnte: zwölf Temperaturen und zwölf Niederschlagssummen, im Achsenkreuz oder in Zahlenfeldern. Danach drückt es „Prüfen“.",
   answer: "Zwölf Temperaturen in °C und zwölf Niederschlagssummen in mm, wie es sie gezeichnet hat.",
   correct:
-    "Richtig, wenn Jahresmittel (höchstens 4 °C daneben), Temperaturspanne (6 K), wärmster und kältester Monat (1 Monat), Jahresniederschlag (30 %), Zahl der humiden Monate (1) und die Verteilung des Regens auf Sommer und Winter zum Ort passen. Ein anderer, aber plausibler Verlauf kann bestehen.",
+    "Plausibel, wenn Jahresmittel (höchstens 4 °C daneben), Temperaturspanne (6 K), wärmster und kältester Monat (1 Monat), Jahresniederschlag (30 %), Zahl der humiden Monate (1) und die Verteilung des Regens auf Sommer und Winter zum Ort passen. Ein anderer, aber plausibler Verlauf kann bestehen.",
   mistakes: [
     "Den Jahresverlauf der Temperatur um ein halbes Jahr verschoben: der wärmste Monat liegt im Winter.",
     "Eine flache Temperaturlinie gezeichnet: kein Unterschied zwischen Sommer und Winter.",

@@ -461,10 +461,11 @@ svg {
   font-weight: 600;
 }
 .zd-auswahl {
-  fill: none;
-  stroke: var(--page-text);
-  stroke-width: 1.5;
-  stroke-dasharray: 3 2;
+  fill: var(--page-accent);
+  fill-opacity: 0.18;
+  stroke: var(--page-accent);
+  stroke-width: 2;
+  pointer-events: none;
 }
 .zd-saeule {
   fill: var(--zd-nied);

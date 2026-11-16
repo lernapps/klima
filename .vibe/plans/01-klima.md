@@ -8,7 +8,7 @@ phase: commit
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { accessible: 1, checks-pass: 6, usable-at-360px: 1 }
+failedChecks: { accessible: 1, checks-pass: 7, usable-at-360px: 1 }
 ---
 
 # Plan: Klima in Europa, first version

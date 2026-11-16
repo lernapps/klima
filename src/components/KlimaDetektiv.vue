@@ -6,7 +6,7 @@
 // "Prüfen", checks the answer and gives the message of a typical mistake.
 import { computed, ref } from "vue";
 import { gradAlsNiederschlag, layout, niederschlagAlsGrad, zahl, fuelle, KNICK_MM } from "./KlimaDiagramm.ts";
-import { generate, type Answer } from "./KlimaDetektiv.ts";
+import { check, generate, type Answer } from "./KlimaDetektiv.ts";
 
 type Texte = {
   task: string;
@@ -30,6 +30,8 @@ type Texte = {
 };
 
 type Anzeige = {
+  /** Shown when the answer is plausible: names the place and what was checked, with {ort}. */
+  plausibel: string;
   /** The task, with {ort}. */
   task: string;
   /** What a screen reader hears for the chart, with {ort}. */
@@ -230,6 +232,11 @@ const saeulen = computed(() =>
     return [{ m, x: a.x(m) - w / 2, w, oben: a.y(niederschlagAlsGrad(wert)), unten: a.y(0), hoch: wert > KNICK_MM }];
   }),
 );
+/** The place is named only once the checked answer is plausible. */
+const geloest = computed(() => {
+  if (!props.checked || t.value.some((w) => w === null) || n.value.some((w) => w === null)) return false;
+  return check(aufgabe.value, { t: [...t.value], n: [...n.value] });
+});
 const feldWert = (wert: number | null): string => (wert === null ? "" : zahl(wert));
 </script>
 
@@ -358,6 +365,7 @@ const feldWert = (wert: number | null): string => (wert === null ? "" : zahl(wer
       <li><span class="zd-zeichen zd-zeichen-saeule"></span>{{ az.legendeNiederschlag }}</li>
     </ul>
     <p class="zd-hinweiskurz">{{ fuelle(az.hinweisKurz, werte) }}</p>
+    <p v-if="geloest" class="zd-plausibel" role="status">{{ fuelle(az.plausibel, werte) }}</p>
     <div class="zd-monat">
       <p class="zd-monatname">{{ fuelle(az.monatKopf, { monat: az.monate[monat] ?? "" }) }}</p>
       <div class="zd-felder">
@@ -458,11 +466,17 @@ svg {
   fill: var(--zd-nied);
   font-weight: 600;
 }
+.zd-plausibel {
+  border-left: 4px solid var(--page-accent);
+  padding-left: 0.75rem;
+  font-weight: 600;
+}
 .zd-auswahl {
-  fill: none;
-  stroke: var(--page-text);
-  stroke-width: 1.5;
-  stroke-dasharray: 3 2;
+  fill: var(--page-accent);
+  fill-opacity: 0.18;
+  stroke: var(--page-accent);
+  stroke-width: 2;
+  pointer-events: none;
 }
 .zd-saeule {
   fill: var(--zd-nied);
