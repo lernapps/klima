@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 600" font-family="sans-serif" font-size="14">
+<title>Skizze Komponente "Klimadetektiv"</title>
+<rect width="640" height="600" fill="#fff" stroke="#999"/>
+<text x="20" y="30" font-size="18" font-weight="bold">Klimadetektiv: Wie sieht das Diagramm für Madrid aus?</text>
+<rect x="20" y="44" width="600" height="110" fill="#fffbea" stroke="#cc9"/>
+<text x="30" y="68" font-weight="bold">Hinweise zum Ort</text>
+<text x="30" y="90">• Breite: 40° N (etwa wie Neapel)   • Entfernung zum Meer: 300 km</text>
+<text x="30" y="112">• Höhe: 650 m   • Lage: Hochebene im Landesinneren</text>
+<text x="30" y="134" fill="#555">Der Ortsname bleibt als Gedächtnisstütze, die Werte sind verborgen.</text>
+<text x="20" y="184" font-weight="bold">Dein Tipp (Diagramm, wie in der Zeichen-Übung)</text>
+<rect x="20" y="194" width="400" height="200" fill="#f4f8fc" stroke="#69c"/>
+<text x="30" y="214" fill="#555">12 Temperaturpunkte, 12 Säulen: Regler je Monat</text>
+<rect x="440" y="194" width="180" height="200" fill="#fffbea" stroke="#cc9"/>
+<text x="450" y="216" font-weight="bold">Monat: Juli</text><text x="450" y="244">Temperatur [−] 20 [+]</text><text x="450" y="272">Regen [−] 20 [+]</text>
+<text x="450" y="302">Voriger | Nächster</text>
+<rect x="20" y="414" width="120" height="32" fill="#eee" stroke="#666"/><text x="48" y="435">Prüfen</text>
+<text x="20" y="476" font-weight="bold">Nach "Prüfen": Merkmale, nicht Punkte</text>
+<text x="20" y="498">✔ Jahresmitteltemperatur passt (±3 °C)</text>
+<text x="20" y="518">✔ Wärmster Monat ist ein Sommermonat</text>
+<text x="20" y="538" fill="#a22">✘ Zu viele humide Monate: Im Sommer ist es dort trocken. Was heißt das für die Säulen?</text>
+<text x="20" y="562" fill="#555">Danach zeigt die App das echte Diagramm zum Vergleichen (erst nach Prüfen).</text>
+</svg>

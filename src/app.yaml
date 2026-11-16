@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+format: 2
+strand: erdkunde/klima
+title: Klima in Europa
+intro: |
+  Warum ist es in Lissabon im Sommer trocken und in Bergen fast immer nass? Du wirst Klimadetektivin oder Klimadetektiv:
+  Du liest Klimadiagramme, zeichnest eigene und findest heraus, zu welchem Ort in Europa sie gehören.
+  Für Klasse 6.
+languages: [de]
+chapters: [wetter-klima, diagramme, europa, detektiv]
+sources:
+  - title: Klimadiagramm (Wikipedia)
+    url: https://de.wikipedia.org/wiki/Klimadiagramm
+  - title: Wetter (Wikipedia)
+    url: https://de.wikipedia.org/wiki/Wetter
+  - title: Klima (Wikipedia)
+    url: https://de.wikipedia.org/wiki/Klima
+  - title: Seeklima (Wikipedia)
+    url: https://de.wikipedia.org/wiki/Seeklima
+  - title: Kontinentalklima (Wikipedia)
+    url: https://de.wikipedia.org/wiki/Kontinentalklima
+  - title: Golfstrom (Wikipedia)
+    url: https://de.wikipedia.org/wiki/Golfstrom
+  - title: Europa (Wikipedia)
+    url: https://de.wikipedia.org/wiki/Europa
+  - title: Natural Earth (Kartendaten der Karten)
+    url: https://www.naturalearthdata.com/
+  - title: Vieljährige Mittelwerte 1991–2020 (Deutscher Wetterdienst)
+    url: https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/multi_annual/mean_91-20/
+  - title: Global Summary of the Month (NOAA NCEI)
+    url: https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc:C00946
+  - title: Monatswerte Reykjavík (Isländischer Wetterdienst)
+    url: http://www.vedur.is/Medaltalstoflur-txt/Stod_001_Reykjavik.ManMedal.txt
+  - title: Valores climatológicos normales, Madrid Retiro (AEMET)
+    url: http://www.aemet.es/es/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?l=3195&k=mad

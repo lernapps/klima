@@ -1,0 +1,178 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Seeklima und Landklima
+description: Du erklärst, warum es im Westen Europas milde Winter und kühle Sommer gibt und im Osten kalte Winter und heiße Sommer.
+competencies: [seeklima-landklima]
+blocks:
+  - type: section
+    id: einstieg
+    title: Wo lag der Ort ohne Namen?
+    blocks:
+      - type: text
+        text: |
+          Erinnerst du dich an das Diagramm ohne Namen auf der Seite [Ein Klimadiagramm lesen](/diagramme/lesen/)? Es gehört
+          zu Berlin. Jetzt kannst du erklären, warum Berlin ein Klima hat, das man nicht einfach "mild" oder "streng"
+          nennen kann: Der Ort liegt zwischen dem Meer im Westen und dem weiten Land im Osten.
+      - type: text
+        text: |
+          **Das kannst du danach:** Du erklärst, warum es in Westeuropa milde Winter und kühle Sommer gibt und im Osten
+          kalte Winter und heiße Sommer, auch mit dem Golfstrom. Dafür brauchst du das, was du über Klimadiagramme
+          gelernt hast.
+  - type: section
+    id: erklaerung
+    title: Das Meer gleicht aus
+    blocks:
+      - type: text
+        text: |
+          Vergleiche zwei Orte: Brest liegt in Frankreich direkt am Atlantik. Moskau liegt tief im Osten Europas, weit vom
+          Meer entfernt. Achte auf die Achsen: Sie reichen bei Moskau bis unter 0 °C.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: brest
+          monatswerte: true
+        nojs: |
+          Klimadiagramm von Brest. Die Temperatur bleibt das ganze Jahr zwischen etwa 7 und 17 °C. Es fällt in jedem
+          Monat Niederschlag, im Winter etwas mehr als im Sommer.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: moskau
+          monatswerte: true
+        nojs: |
+          Klimadiagramm von Moskau. Die Temperatur liegt im Winter deutlich unter 0 °C und steigt im Sommer auf fast
+          20 °C. Die Niederschlagssäulen sind im Sommer höher als im Winter.
+      - type: text
+        text: |
+          Brest hat milde Winter und kühle Sommer. Moskau hat kalte Winter und warme Sommer. Den Unterschied zwischen
+          dem wärmsten und dem kältesten Monat nennen wir hier die **Temperaturspanne**. In Brest ist sie klein, in
+          Moskau sehr groß.
+      - type: definition
+        term: Seeklima
+        explanation: Seeklima herrscht in der Nähe des Meeres. Die Winter sind mild, die Sommer kühl, und die Temperaturen schwanken nur wenig.
+      - type: definition
+        term: Landklima
+        explanation: Landklima herrscht weit vom Meer entfernt. Die Winter sind kalt, die Sommer warm bis heiß, und der Unterschied zwischen beiden ist groß.
+      - type: text
+        text: |
+          Der Grund ist das Wasser. Wasser erwärmt sich langsamer als Land und kühlt sich auch langsamer ab. Im Sommer
+          bleibt das Meer kühl und kühlt die Luft. Im Winter gibt es die gespeicherte Wärme ab. Weit vom Meer fehlt
+          dieser Ausgleich: Das Land heizt sich im Sommer stark auf und kühlt im Winter stark aus.
+      - type: text
+        text: |
+          In Europa weht der Wind meistens aus Westen. Er trägt die Luft vom Atlantik weit ins Land. Je weiter du nach
+          Osten kommst, desto schwächer wird der Einfluss des Meeres.
+      - type: figure
+        image: images/golfstrom.svg
+        alt: Karte des Nordatlantiks. Ein roter Pfeil führt von der Küste Floridas nach Nordosten über den Atlantik bis zur Küste Norwegens. Beschriftet sind Golfstrom, Nordatlantikstrom und Europa.
+        caption: Die Meeresströmung transportiert warmes Wasser aus dem Süden nach Nordeuropa. Der Weg ist schematisch gezeichnet.
+        source: eigene Karte nach Natural-Earth-Daten (naturalearthdata.com)
+        licence: gemeinfrei
+      - type: text
+        text: |
+          Dazu kommt der **Golfstrom**. Die Strömung bringt warmes Wasser aus den Tropen nach Norden. Der Teil, der bis
+          nach Europa reicht, heißt Nordatlantikstrom. Darum sind Großbritannien und Norwegen milder, als man bei ihrer
+          Lage so weit im Norden erwarten würde.
+      - type: note
+        title: Vorsicht, Falle
+        blocks:
+          - type: text
+            text: |
+              Der Golfstrom ist nicht der einzige Grund. Auch die Westwinde und das Meer selbst gleichen die
+              Temperaturen aus. Und ein Ort am Meer hat nur dann Seeklima, wenn der Wind die Meeresluft zu ihm
+              trägt.
+  - type: section
+    id: beispiel
+    title: Berlin liegt dazwischen
+    blocks:
+      - type: example
+        title: Die Temperaturspanne dreier Orte
+        blocks:
+          - type: text
+            text: |
+              Brest: Im August sind es etwa 17 °C, im Januar etwa 7 °C. Die Spanne ist 17 − 7 = 10 °C.
+              Moskau: Im Juli sind es etwa 20 °C, im Januar etwa −6,5 °C. Die Spanne ist 20 + 6,5 = 26,5 °C.
+              Berlin: Im Juli sind es etwa 19 °C, im Januar etwa 1 °C. Die Spanne ist rund 18 °C und liegt zwischen den
+              beiden. Berlin hat also weder reines Seeklima noch reines Landklima.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: text
+        text: |
+          Jetzt Berlin mit seinem Namen. Du kannst die Monate antippen und die Werte prüfen.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: berlin
+          monatswerte: true
+        nojs: |
+          Klimadiagramm von Berlin. Die Temperatur liegt im Winter knapp über 0 °C und steigt im Sommer auf fast 20 °C.
+          Die Niederschlagssäulen sind in allen Monaten niedrig bis mittelhoch.
+      - type: number
+        id: see-land-1
+        text: "Wie groß ist die Temperaturspanne in Berlin, also wärmster minus kältester Monat? Bis 1,5 °C daneben zählt noch als richtig."
+        answer: 18.5
+        tolerance: 1.5
+        unit: °C
+        mistakes:
+          - answer: 20.3
+            message: "Du hast den wärmsten und den kältesten Monat addiert. Für die Spanne ziehst du den kältesten Wert vom wärmsten ab."
+        hint: Lies den wärmsten und den kältesten Monat ab und rechne den Unterschied aus.
+        explanation: Der wärmste Monat ist der Juli mit etwa 19 °C, der kälteste der Januar mit etwa 1 °C. Die Spanne ist rund 18 bis 19 °C.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: single-choice
+        id: see-land-2
+        text: Warum ist die Temperaturspanne in Moskau viel größer als in Brest?
+        options:
+          - text: Moskau liegt weit vom Meer entfernt, und dem Land fehlt der Ausgleich durch das Wasser.
+            correct: true
+            info: Land heizt sich im Sommer stark auf und kühlt im Winter stark aus. Das Meer gleicht beides aus, aber in Moskau ist es zu weit weg.
+          - text: Moskau liegt viel höher auf einem Berg.
+            correct: false
+            info: Die Station in Moskau liegt auf etwa 156 m, Brest auf etwa 94 m. Das erklärt den Unterschied nicht.
+          - text: Der Golfstrom wärmt Moskau im Sommer besonders stark.
+            correct: false
+            info: Die Strömung wärmt vor allem den Nordwesten Europas. Moskau ist zu weit entfernt.
+          - text: In Brest scheint die Sonne länger als in Moskau.
+            correct: false
+            info: Die Sonnenscheindauer erklärt den Unterschied der Spanne nicht. Entscheidend ist die Entfernung zum Meer.
+        explanation: Das Meer speichert Wärme und gleicht Sommer und Winter aus. Weit davon entfernt gibt es dieses Polster nicht.
+        links:
+          - title: Seeklima (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Seeklima
+      - type: multiple-choice
+        id: see-land-3
+        text: Welche Aussagen passen zum Landklima? Mehrere Antworten sind richtig.
+        options:
+          - text: Im Winter ist es kalt.
+            correct: true
+            info: Ohne Meer als Wärmespeicher kühlt das Land im Winter stark aus.
+          - text: Im Sommer wird es warm bis heiß.
+            correct: true
+            info: Das Land heizt sich schnell auf.
+          - text: Die Temperatur schwankt im Jahr nur wenig.
+            correct: false
+            info: Das passt zum Seeklima. Im Landklima ist die Spanne groß.
+          - text: Der Unterschied zwischen Sommer und Winter ist groß.
+            correct: true
+            info: Das ist das wichtigste Merkmal des Landklimas.
+        explanation: Landklima heißt kalte Winter, warme bis heiße Sommer und eine große Spanne dazwischen.
+        links:
+          - title: Kontinentalklima (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Kontinentalklima
+      - type: true-false
+        id: see-land-4
+        text: "Der Golfstrom bringt warmes Wasser aus den Tropen nach Norden und macht so das Klima in Nordwesteuropa milder."
+        answer: true
+        explanation: Das warme Wasser gibt Wärme an die Luft ab. Darum sind Großbritannien und Norwegen milder, als es ihre Lage im Norden erwarten lässt.
+        links:
+          - title: Golfstrom (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Golfstrom

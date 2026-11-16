@@ -1,0 +1,18 @@
+# The texts of the climate diagram (component KlimaDiagramm): one record, so every diagram of the app says the same.
+- titel: "Klimadiagramm: {ort}"
+  alt: "Klimadiagramm von {ort}: eine rote Linie mit Kreisen für die Temperatur und blaue Säulen für den Niederschlag in den zwölf Monaten des Jahres."
+  verdecktName: "ein Ort in Europa"
+  monate: [Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
+  monateKurz: [Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
+  legende:
+    temperatur: "Temperatur (rote Linie)"
+    niederschlag: "Niederschlag (blaue Säulen)"
+    niederschlagHoch: "Niederschlag über 100 mm (dunkel)"
+    humid: "feuchter Monat (humid)"
+    arid: "trockener Monat (arid)"
+    achseGrad: "°C"
+    achseMm: "mm"
+  monatText: "{monat}: {t} °C, {n} mm Niederschlag"
+  monatLeer: "Noch kein Monat gewählt."
+  schalter: "Feuchte und trockene Monate zeigen"
+  schalterText: "Feucht (humid): {humid}. Trocken (arid): {arid}."

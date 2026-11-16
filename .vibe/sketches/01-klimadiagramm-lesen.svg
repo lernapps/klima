@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" font-family="sans-serif" font-size="14">
+<title>Skizze Seite "Klimadiagramm lesen"</title>
+<rect width="640" height="520" fill="#fff" stroke="#999"/>
+<text x="20" y="30" font-size="20" font-weight="bold">Klimadiagramm lesen</text>
+<text x="20" y="54" fill="#555">Danach kannst du: Temperatur und Niederschlag ablesen. Vorher: Wetter messen.</text>
+<text x="20" y="84" font-weight="bold">Einstieg: Dein Urlaub in Reykjavik? Was packst du ein?</text>
+<rect x="20" y="96" width="400" height="230" fill="#f4f8fc" stroke="#69c"/>
+<polyline points="60,280 100,275 140,260 180,235 220,205 260,185 300,180 340,185 380,205" fill="none" stroke="#c33" stroke-width="3"/>
+<g fill="#39c"><rect x="52" y="250" width="16" height="40"/><rect x="92" y="255" width="16" height="35"/><rect x="132" y="262" width="16" height="28"/><rect x="172" y="268" width="16" height="22"/><rect x="212" y="272" width="16" height="18"/><rect x="252" y="272" width="16" height="18"/></g>
+<text x="24" y="116" fill="#c33">°C (links)</text><text x="340" y="116" fill="#39c">mm (rechts)</text>
+<text x="60" y="318" fill="#555">J  F  M  A  M  J  J  A  S  O  N  D</text>
+<rect x="440" y="96" width="180" height="230" fill="#fff8e1" stroke="#cc9"/>
+<text x="450" y="120" font-weight="bold">So liest du es</text>
+<text x="450" y="144">rote Linie = Temperatur</text><text x="450" y="166">blaue Säulen = Regen</text>
+<text x="450" y="188">Achtung: Säulenhöhe</text><text x="450" y="206">ist keine Temperatur!</text>
+<text x="20" y="360" font-weight="bold">Übung (von leicht zu schwer)</text>
+<text x="20" y="384">1 Wähle: Welche Linie zeigt die Temperatur? (single-choice)</text>
+<text x="20" y="406">2 Lies ab: Wie warm ist es im Juli? (number, ± Toleranz)</text>
+<text x="20" y="428">3 Wahr oder falsch: "Im Januar regnet es am meisten." (true-false)</text>
+<text x="20" y="450">4 Welcher Marker auf der Europakarte passt zum Diagramm? (single-choice mit Karte)</text>
+<rect x="20" y="468" width="120" height="32" fill="#eee" stroke="#666"/><text x="48" y="489">Prüfen</text>
+</svg>

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Klimadetektiv
+summary: Du bekommst nur Hinweise zur Lage eines Ortes und findest heraus, wie sein Klimadiagramm aussieht.
+pages: [vorhersage]
+selfAssessment:
+  pages:
+    - exercises:
+        - /detektiv/vorhersage/#detektiv-1
+        - /detektiv/vorhersage/#detektiv-2
+        - /detektiv/vorhersage/#detektiv-3

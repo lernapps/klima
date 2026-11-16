@@ -1,0 +1,134 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Wetter messen und aufschreiben
+description: Du trägst Messwerte in eine Tabelle ein, rechnest Mittelwert und Summe und wählst die passende Darstellung.
+competencies: [wetter-messen]
+blocks:
+  - type: section
+    id: einstieg
+    title: Deine eigene Wetterstation
+    blocks:
+      - type: text
+        text: |
+          Stell dir vor, du baust vor der Schule eine kleine Wetterstation auf: ein Thermometer und einen Regenmesser.
+          Eine Woche lang schreibst du jeden Tag auf, was du misst. Was fängst du danach mit den Zahlen an?
+      - type: text
+        text: |
+          **Das kannst du danach:** Du schreibst Messwerte in eine Tabelle, rechnest daraus einen Mittelwert oder eine
+          Summe und weißt, ob du Temperatur als Linie oder Niederschlag als Säulen zeichnest. Davor hast du gelernt,
+          dass Temperatur und Niederschlag zwei Wetterelemente sind.
+  - type: section
+    id: erklaerung
+    title: Messen, eintragen, zusammenfassen
+    blocks:
+      - type: text
+        text: |
+          Das **Thermometer** stellst du in den Schatten. In der Sonne würde es die Sonnenstrahlen messen und nicht
+          die Luft. Du liest die Temperatur in °C ab. Den **Niederschlag** misst du in mm. 1 mm bedeutet: Auf jedem
+          Quadratmeter liegt 1 Liter Wasser.
+      - type: table
+        caption: Messwerte einer Woche (Beispiel)
+        header: [Tag, Temperatur in °C, Niederschlag in mm]
+        rowHeaders: false
+        rows:
+          - ["Montag", "12", "0"]
+          - ["Dienstag", "14", "3"]
+          - ["Mittwoch", "11", "8"]
+          - ["Donnerstag", "13", "1"]
+          - ["Freitag", "15", "0"]
+      - type: text
+        text: |
+          Die Tabelle zeigt, was gegeben ist. Daraus machst du zwei verschiedene Zusammenfassungen:
+          - Bei der **Temperatur** bildest du den **Mittelwert**: alle Werte addieren und durch die Anzahl der Tage teilen.
+          - Beim **Niederschlag** bildest du die **Summe**: Das Wasser jedes Tages kommt zusammen.
+      - type: text
+        text: |
+          Für ein Diagramm gilt: Die Temperatur ändert sich von Tag zu Tag fließend. Dafür passt eine **Linie**.
+          Der Niederschlag ist die Menge, die an einem Tag zusammengekommen ist. Dafür passen **Säulen**. So ist
+          auch das Klimadiagramm aufgebaut, das du auf der nächsten Seite kennenlernst.
+  - type: section
+    id: beispiel
+    title: Mittelwert und Summe
+    blocks:
+      - type: example
+        title: Die Woche aus der Tabelle
+        blocks:
+          - type: text
+            text: |
+              Mittelwert der Temperatur: 12 + 14 + 11 + 13 + 15 = 65, und 65 : 5 = 13. Im Durchschnitt waren es 13 °C.
+              Summe des Niederschlags: 0 + 3 + 8 + 1 + 0 = 12. In den fünf Tagen sind insgesamt 12 mm gefallen.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: matching
+        id: wetter-messen-1
+        text: Ordne jeder Messung die passende Darstellung zu.
+        pairs:
+          - { left: Temperatur jeden Tag, right: Linie }
+          - { left: Niederschlag jeden Tag, right: Säulen }
+        distractors: [Kreisdiagramm]
+        explanation: Die Temperatur verläuft fließend, dafür passt eine Linie. Niederschlag ist eine Menge pro Tag, dafür passen Säulen.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: generated
+        id: wetter-messen-2
+        given:
+          a: { int: [6, 20] }
+          b: { int: [6, 20] }
+          c: { int: [6, 20] }
+          d: { int: [6, 20] }
+          e: { int: [6, 20] }
+        task:
+          text: "An fünf Tagen misst du um 12 Uhr diese Temperaturen: {{a}} °C, {{b}} °C, {{c}} °C, {{d}} °C und {{e}} °C. Wie hoch ist die Durchschnittstemperatur in °C?"
+        answer:
+          value: "(a + b + c + d + e) / 5"
+          compare: { number: { format: decimal, decimals: 1, tolerance: 0.1, unit: "°C" } }
+        mistakes:
+          - {
+              value: "a + b + c + d + e",
+              message: "Das ist die Summe der Werte. Für den Durchschnitt musst du noch durch die Anzahl der Tage teilen.",
+            }
+          - {
+              value: "(a + b + c + d + e) / 4",
+              message: "Du hast durch 4 geteilt. Es sind aber fünf Tage, also durch 5.",
+            }
+        hint: "Addiere zuerst alle Werte. Teile dann durch die Anzahl der Tage."
+        steps:
+          - "Zuerst addierst du alle fünf Werte."
+          - "Dann teilst du die Summe durch 5, weil es fünf Tage sind. Das Ergebnis ist {{answer}} °C."
+      - type: generated
+        id: wetter-messen-3
+        given:
+          w1: { int: [10, 60], step: 5 }
+          w2: { int: [10, 60], step: 5 }
+          w3: { int: [10, 60], step: 5 }
+          w4: { int: [10, 60], step: 5 }
+        task:
+          text: "In vier Wochen des Monats fallen {{w1}} mm, {{w2}} mm, {{w3}} mm und {{w4}} mm Niederschlag. Wie viel Niederschlag fällt in dem ganzen Monat in mm?"
+        answer:
+          value: "w1 + w2 + w3 + w4"
+          compare: { number: { format: integer, tolerance: 0, unit: "mm" } }
+        mistakes:
+          - {
+              value: "(w1 + w2 + w3 + w4) / 4",
+              message: "Das ist der Durchschnitt pro Woche. Gefragt ist aber, wie viel in dem ganzen Monat zusammenkommt. Dafür addierst du die Wochen.",
+            }
+        hint: "Beim Niederschlag zählst du alles zusammen, was gefallen ist."
+        steps:
+          - "Du addierst die Niederschläge aller vier Wochen."
+          - "Das Ergebnis ist {{answer}} mm."
+      - type: number
+        id: wetter-messen-4
+        text: "Ein Regenmesser zeigt nach einem Gewitter 20 mm. Wie viel Liter Wasser sind auf einem Quadratmeter Boden gefallen?"
+        answer: 20
+        tolerance: 0
+        unit: Liter
+        mistakes:
+          - answer: 2
+            message: "Du hast durch 10 geteilt. 1 mm bedeutet 1 Liter auf einem Quadratmeter, also 20 mm sind 20 Liter."
+        hint: "Denke an die Regel: 1 mm Niederschlag sind 1 Liter pro Quadratmeter."
+        explanation: 1 mm Niederschlag sind 1 Liter Wasser auf einem Quadratmeter. 20 mm sind also 20 Liter.
+        links:
+          - title: Niederschlag (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Niederschlag_(Meteorologie)

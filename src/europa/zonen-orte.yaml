@@ -1,0 +1,226 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Typische Orte der Klimazonen
+description: Du erkennst an Klimadiagrammen, zu welcher Klimazone Europas ein Ort gehört.
+competencies: [klimazonen-europas]
+blocks:
+  - type: section
+    id: einstieg
+    title: Fünf Fälle für Klimadetektive
+    blocks:
+      - type: text
+        text: |
+          Jede Zone hat ihre Handschrift im Klimadiagramm. Wenn du sie kennst, kannst du ein Diagramm ohne Namen einer
+          Zone zuordnen. Genau das machst du hier. Zuerst siehst du ein typisches Diagramm je Zone. Mit dem Schalter unter einem Diagramm färbst du die feuchten
+          und trockenen Monate ein, und mit einem Tipp auf einen Monat siehst du seine Werte.
+      - type: text
+        text: |
+          **Das kannst du danach:** Du ordnest Klimadiagramme und Orte den Zonen Europas zu. Vorher hast du die Zonen und
+          ihre Pflanzen kennengelernt. Hier kommen die Klimadiagramme dazu.
+  - type: section
+    id: erklaerung
+    title: So sieht jede Zone im Diagramm aus
+    blocks:
+      - type: text
+        text: |
+          **Mittelmeerklima: Athen.** Die Säulen sind im Sommer winzig und liegen unter der Linie: Von April bis Oktober
+          ist es arid. Im Winter sind die Säulen höher, die Linie bleibt über 10 °C.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: athen
+          monatswerte: true
+          humidSchalter: true
+        nojs: |
+          Klimadiagramm von Athen. Im Sommer ist es sehr warm und fast ohne Niederschlag, die Monate von April bis Oktober
+          sind arid. Im Winter ist es mild und es regnet mehr.
+      - type: text
+        text: |
+          **Ozeanisches Klima: Brest.** Die Linie verläuft flach zwischen etwa 7 und 17 °C. Es gibt keinen ariden Monat,
+          weil es das ganze Jahr regnet.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: brest
+          monatswerte: true
+          humidSchalter: true
+        nojs: |
+          Klimadiagramm von Brest. Die Temperatur schwankt nur wenig, und in jedem Monat fällt viel Niederschlag. Alle
+          Monate sind humid.
+      - type: text
+        text: |
+          **Kontinentalklima: Moskau.** Die Linie fällt im Winter weit unter 0 °C und steigt im Sommer fast auf 20 °C. Die
+          Spanne ist groß. Im Sommer fallen mehr Niederschläge als im Winter.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: moskau
+          monatswerte: true
+          humidSchalter: true
+        nojs: |
+          Klimadiagramm von Moskau. Im Winter liegt die Temperatur weit unter 0 °C, im Sommer bei fast 20 °C. Im Sommer
+          fällt mehr Niederschlag als im Winter.
+      - type: text
+        text: |
+          **Kalter Norden: Tromsø.** Von Dezember bis März liegt die Linie unter 0 °C. Auch im wärmsten Monat, dem Juli,
+          sind es nur etwa 13 °C. Der Winter ist lang, der Sommer kurz und kühl.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: tromso
+          monatswerte: true
+          humidSchalter: true
+        nojs: |
+          Klimadiagramm von Tromsø. Die Temperatur liegt im Winter unter 0 °C und erreicht im Juli nur etwa 13 °C. Es fällt
+          das ganze Jahr Niederschlag.
+      - type: text
+        text: |
+          **Hochgebirge: Zugspitze.** Fast das ganze Jahr liegt die Linie unter 0 °C, selbst im Sommer sind es höchstens
+          knapp 4 °C. Die Säulen sind sehr hoch: Es fallen über 2000 mm im Jahr. Weil sie über 100 mm reichen, ist ihr oberer
+          Teil dunkel und gestaucht gezeichnet.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: zugspitze
+          monatswerte: true
+        nojs: |
+          Klimadiagramm der Zugspitze. Die Temperatur liegt in allen Monaten außer Juni bis August unter 0 °C oder knapp
+          darüber, und es fällt sehr viel Niederschlag, über 100 mm in jedem Monat.
+      - type: note
+        title: Vorsicht, Falle
+        blocks:
+          - type: text
+            text: |
+              Ein einzelner Ort sagt nicht alles. Madrid liegt auf einer Hochebene im Landesinneren und hat deshalb kältere
+              Winter als Athen. Trotzdem ist der Sommer dort arid. Darum gehört es zum Mittelmeerklima.
+  - type: section
+    id: beispiel
+    title: Vom Diagramm zur Zone
+    blocks:
+      - type: example
+        title: Ein Diagramm bestimmen
+        blocks:
+          - type: text
+            text: |
+              Ein Diagramm hat im Juli etwa 25 °C, aber nur wenige mm Niederschlag, und im Winter über 10 °C. Die Säulen
+              liegen im Sommer unter der Linie. Das passt zum Mittelmeerklima: warm, trocken im Sommer, mild im Winter.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: text
+        text: |
+          Ein Ort ohne Namen. Du erfährst nur, dass er in Europa liegt.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: lissabon
+          verdeckt: true
+        nojs: |
+          Klimadiagramm eines Ortes in Europa. Der Sommer ist warm, der Niederschlag ist im Sommer sehr niedrig.
+      - type: single-choice
+        id: zonen-orte-1
+        text: Zu welcher Klimazone gehört dieser Ort?
+        options:
+          - text: Mittelmeerklima
+            correct: true
+            info: Die Säulen liegen im Sommer unter der Linie und im Winter darüber, und der Winter ist mild.
+          - text: ozeanisches Klima
+            correct: false
+            info: Im ozeanischen Klima gibt es keinen ariden Monat. Hier sind vier Sommermonate arid.
+          - text: Kontinentalklima
+            correct: false
+            info: Im Kontinentalklima fällt die Temperatur im Winter weit unter 0 °C. Hier bleibt sie über 10 °C.
+          - text: kalter Norden
+            correct: false
+            info: Im kalten Norden bleibt auch der Sommer kühl. Hier sind es über 20 °C.
+        explanation: Warm und trocken im Sommer, mild im Winter ist das Merkmal des Mittelmeerklimas.
+        links:
+          - title: Europa (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Europa
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: moskau
+          verdeckt: true
+        nojs: |
+          Klimadiagramm eines Ortes in Europa. Im Winter liegt die Temperatur weit unter 0 °C, im Sommer bei fast 20 °C.
+      - type: single-choice
+        id: zonen-orte-2
+        text: Zu welcher Klimazone gehört dieser Ort?
+        options:
+          - text: Kontinentalklima
+            correct: true
+            info: Die Linie fällt im Winter weit unter 0 °C und steigt im Sommer fast auf 20 °C. Die Spanne ist sehr groß.
+          - text: Mittelmeerklima
+            correct: false
+            info: Im Mittelmeerklima bleibt es im Winter mild, hier gibt es Frost.
+          - text: ozeanisches Klima
+            correct: false
+            info: Im ozeanischen Klima ist die Spanne klein, das Meer gleicht die Temperaturen aus.
+          - text: Hochgebirge
+            correct: false
+            info: Im Hochgebirge bleibt es auch im Sommer kalt. Hier sind es fast 20 °C.
+        explanation: Kalte Winter, warme Sommer und eine große Spanne sind das Merkmal des Kontinentalklimas.
+        links:
+          - title: Kontinentalklima (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Kontinentalklima
+      - type: matching
+        id: zonen-orte-3
+        text: Ordne jedem Ort seine Klimazone zu.
+        pairs:
+          - { left: Lissabon, right: Mittelmeerklima }
+          - { left: Bergen, right: ozeanisches Klima }
+          - { left: Moskau, right: Kontinentalklima }
+          - { left: Reykjavik, right: kalter Norden }
+          - { left: Zugspitze, right: Hochgebirge }
+        explanation: Lissabon hat trockene Sommer, Bergen liegt am Atlantik, Moskau weit im Osten, Reykjavik weit im Norden und die Zugspitze hoch in den Alpen.
+        links:
+          - title: Europa (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Europa
+      - type: single-choice
+        id: zonen-orte-4
+        text: Welcher Marker zeigt einen Ort, dessen Klimadiagramm trockene Sommer und milde Winter hat?
+        material:
+          - type: labelled-figure
+            image: images/europa.svg
+            alt: Karte von Europa mit fünf Markierungen A bis E. A liegt im Südwesten Europas, B an der Westküste Norwegens, C im Osten, D im hohen Norden und E in den Alpen.
+            source: eigene Karte nach Natural-Earth-Daten (naturalearthdata.com)
+            licence: gemeinfrei
+            legend: false
+            labels:
+              - { marker: A, x: 24.6, y: 80.0, text: Lissabon }
+              - { marker: B, x: 47.8, y: 35.1, text: Bergen }
+              - { marker: C, x: 77.2, y: 41.3, text: Moskau }
+              - { marker: D, x: 58.0, y: 13.9, text: Tromsø }
+              - { marker: E, x: 51.6, y: 66.2, text: Zugspitze }
+        options:
+          - text: A
+            correct: true
+            info: A liegt im Süden am Atlantik und am Mittelmeer. Dort sind die Sommer trocken und die Winter mild.
+          - text: B
+            correct: false
+            info: B liegt an der Westküste Norwegens. Dort regnet es fast das ganze Jahr.
+          - text: C
+            correct: false
+            info: C liegt weit im Osten. Dort sind die Winter kalt.
+          - text: D
+            correct: false
+            info: D liegt im hohen Norden. Dort sind auch die Sommer kühl.
+        explanation: Trockene Sommer und milde Winter gibt es im Süden Europas, am Mittelmeer und an der Atlantikküste der Iberischen Halbinsel.
+        links:
+          - title: Europa (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Europa

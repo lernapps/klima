@@ -1,0 +1,140 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Ein Klimadiagramm zeichnen
+description: Du zeichnest aus einer Tabelle mit Temperatur und Niederschlag ein Klimadiagramm.
+competencies: [klimadiagramm-zeichnen]
+blocks:
+  - type: section
+    id: einstieg
+    title: Nur eine Tabelle als Hinweis
+    blocks:
+      - type: text
+        text: |
+          Als Klimadetektivin oder Klimadetektiv bekommst du manchmal keinen Hinweis als Bild, sondern nur eine Tabelle
+          mit Zahlen. Damit du sie mit anderen Orten vergleichen kannst, machst du daraus selbst ein Diagramm.
+      - type: text
+        text: |
+          **Das kannst du danach:** Du zeichnest aus einer Klimatabelle mit zwölf Temperaturen und zwölf
+          Niederschlagswerten ein Klimadiagramm. Vorher hast du gelernt, ein Klimadiagramm zu lesen. Jetzt gehst du den
+          Weg umgekehrt.
+  - type: section
+    id: erklaerung
+    title: In drei Schritten zum Diagramm
+    blocks:
+      - type: text
+        text: |
+          So gehst du vor:
+          1. **Die Achsen:** Links steht die Temperatur in °C, rechts der Niederschlag in mm, unten die zwölf Monate.
+             10 °C auf der linken Achse stehen auf gleicher Höhe wie 20 mm auf der rechten.
+          2. **Die Temperatur:** Für jeden Monat setzt du einen Punkt in die Höhe seines Werts auf der **linken** Achse.
+             Dann verbindest du die Punkte zu einer roten Linie.
+          3. **Der Niederschlag:** Für jeden Monat zeichnest du eine Säule bis zur Höhe seines Werts auf der **rechten**
+             Achse.
+      - type: text
+        text: |
+          Zwei Hinweise für hohe Werte und für die Genauigkeit. Ab 100 mm rückt die rechte Achse enger zusammen: Dort
+          stehen 100 mm für einen Schritt von 10 °C auf der linken Achse. Säulen über 100 mm sind deshalb dunkelblau
+          gezeichnet. Und du musst nicht auf den Millimeter genau sein: Bei der Temperatur zählen bis zu 1 °C daneben,
+          beim Niederschlag bis zu 10 mm (über 100 mm bis zu 25 mm).
+      - type: note
+        title: Vorsicht, Falle
+        blocks:
+          - type: text
+            text: |
+              Die Säulen gehören an die rechte Achse. Wer sie an der linken Achse abliest, zeichnet sie nur halb so hoch,
+              denn dort stehen nur die halben Zahlen.
+  - type: section
+    id: beispiel
+    title: Ein Monat Schritt für Schritt
+    blocks:
+      - type: example
+        title: Reykjavik im Juli
+        blocks:
+          - type: text
+            text: |
+              In der Tabelle von Reykjavik stehen für den Juli 11,6 °C und 50 mm. Die Temperatur zeichnest du als Punkt
+              bei 11,6 auf der linken Achse, also knapp unter der 12. Die Säule zeichnest du bis 50 auf der rechten Achse.
+              Auf der linken Achse liegt dieselbe Höhe bei 25. Wenn deine Säule im Juli bis 50 auf der linken Achse reicht,
+              hast du sie doppelt so hoch gezeichnet, als sie sein soll.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: true-false
+        id: zeichnen-1
+        text: "In einem Klimadiagramm zeichnest du die Temperatur als Linie und den Niederschlag als Säulen."
+        answer: true
+        explanation: Die Temperatur ändert sich von Monat zu Monat fließend, dafür passt die Linie. Der Niederschlag ist eine Menge pro Monat, dafür passen Säulen.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: number
+        id: zeichnen-2
+        text: "In Reykjavik fallen im Juli 50 mm Niederschlag. Auf welcher Zahl der linken Achse endet die Säule, wenn 10 °C auf gleicher Höhe liegen wie 20 mm? Bis 1 daneben zählt noch als richtig."
+        answer: 25
+        tolerance: 1
+        mistakes:
+          - answer: 50
+            message: "50 ist der Wert an der rechten Achse. Auf der linken Achse liegt dieselbe Höhe bei der Hälfte, weil 10 °C auf gleicher Höhe liegen wie 20 mm."
+          - answer: 100
+            message: "Du hast den Wert verdoppelt. Die rechte Achse hat die doppelten Zahlen, also ist die linke die Hälfte."
+        hint: "Auf der linken Achse stehen nur halb so große Zahlen wie auf der rechten."
+        explanation: "50 mm sind auf der rechten Achse bei 50. Die linke Achse hat halb so große Zahlen, also endet die Säule dort bei 25."
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: text
+        text: |
+          Jetzt zeichnest du ein ganzes Diagramm. Unter der Übung zeigt dir „Aufgabe Nr.“ mit dem Pfeil-Knopf einen anderen
+          Ort. Der Knopf „Prüfen“ wird klickbar, sobald du einen Wert gezeichnet hast.
+      - type: vue-component
+        id: zeichnen-3
+        component: ZeichneDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: zeichentexte }
+          anzeige: { data: zeichenanzeige }
+        examples:
+          accepted:
+            - seed: 1
+              answer:
+                {
+                  t: [6.3, 7.9, 11.2, 12.9, 16.7, 22.2, 25.6, 25.1, 20.9, 15.1, 9.9, 6.9],
+                  n: [33, 34, 25, 45, 50, 21, 12, 10, 22, 60, 58, 51],
+                }
+            - seed: 1
+              answer:
+                {
+                  t: [6, 8, 11, 13, 17, 22, 26, 25, 21, 15, 10, 7],
+                  n: [30, 35, 25, 45, 50, 20, 10, 10, 20, 60, 60, 50],
+                }
+            - seed: 2
+              answer:
+                {
+                  t: [11.8, 12.7, 14.8, 16.2, 18.5, 21.3, 23, 23.6, 21.9, 19, 14.9, 12.4],
+                  n: [106, 73, 74, 65, 57, 13, 2, 7, 36, 111, 127, 107],
+                }
+          rejected:
+            - seed: 1
+              answer:
+                {
+                  t: [6.3, 7.9, 11.2, 12.9, 16.7, 22.2, 25.6, 25.1, 20.9, 15.1, 9.9, 6.9],
+                  n: [16.5, 17, 12.5, 22.5, 25, 10.5, 6, 5, 11, 30, 29, 25.5],
+                }
+            - seed: 1
+              answer:
+                {
+                  t: [33, 34, 25, 45, 50, 21, 12, 10, 22, 60, 58, 51],
+                  n: [6.3, 7.9, 11.2, 12.9, 16.7, 22.2, 25.6, 25.1, 20.9, 15.1, 9.9, 6.9],
+                }
+            - seed: 1
+              answer:
+                {
+                  t: [6.3, null, 11.2, 12.9, 16.7, 22.2, 25.6, 25.1, 20.9, 15.1, 9.9, 6.9],
+                  n: [33, 34, 25, 45, 50, 21, 12, 10, 22, 60, 58, 51],
+                }
+            - seed: 2
+              answer:
+                {
+                  t: [11.8, 12.7, 14.8, 16.2, 18.5, 21.3, 23, 23.6, 21.9, 19, 14.9, 12.4],
+                  n: [53, 36.5, 37, 32.5, 28.5, 6.5, 1, 3.5, 18, 55.5, 63.5, 53.5],
+                }

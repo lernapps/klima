@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Klima in Europa
+summary: Du erklärst, warum es im Westen Europas milder ist als im Osten, und lernst die Klimazonen Europas kennen.
+pages: [see-land, zonen, zonen-orte]
+selfAssessment:
+  pages:
+    - exercises:
+        - /europa/see-land/#see-land-2
+        - /europa/see-land/#see-land-4
+    - exercises:
+        - /europa/zonen/#zonen-1
+        - /europa/zonen/#zonen-2
+        - /europa/zonen/#zonen-3
+    - exercises:
+        - /europa/zonen-orte/#zonen-orte-3
+        - /europa/zonen-orte/#zonen-orte-4

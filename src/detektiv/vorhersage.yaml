@@ -1,0 +1,163 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Wie sieht das Diagramm für diesen Ort aus?
+description: Du schließt aus der Lage eines Ortes auf sein Klimadiagramm und zeichnest es.
+competencies: [klimadiagramm-zeichnen]
+blocks:
+  - type: section
+    id: einstieg
+    title: Der letzte Fall
+    blocks:
+      - type: text
+        text: |
+          Jetzt ist es ernst, Klimadetektivin und Klimadetektiv: Du bekommst weder ein Diagramm noch eine Tabelle, sondern
+          nur Hinweise, wo ein Ort liegt. Daraus musst du schließen, wie dort das Klima ist, und das Diagramm selbst
+          zeichnen.
+      - type: text
+        text: |
+          **Das kannst du danach:** Du leitest aus der Lage eines Ortes ab, wie sein Klimadiagramm ungefähr aussieht, und
+          zeichnest es. Vorher hast du Diagramme gelesen und aus Tabellen gezeichnet und die Klimazonen Europas
+          kennengelernt. Jetzt benutzt du alles zusammen.
+  - type: section
+    id: erklaerung
+    title: Aus Hinweisen wird ein Diagramm
+    blocks:
+      - type: text
+        text: |
+          Jeder Hinweis verrät dir ein Merkmal des Diagramms:
+          - **Breite:** Je weiter im Norden ein Ort liegt, desto kälter ist es meist.
+          - **Höhe:** Mit der Höhe wird es kälter.
+          - **Meer:** Am Meer sind die Winter mild und die Sommer kühl, die Temperaturspanne ist klein. Weit vom Meer
+            sind die Winter kalt und die Sommer warm bis heiß.
+          - **Wind und Berge:** Der Westwind bringt Regen an die Küsten und Gebirge. Weit im Landesinneren fällt weniger
+            Niederschlag.
+          - **Mittelmeer:** Im Süden ist der Sommer trocken. Die Säulen liegen dann unter der Linie.
+      - type: text
+        text: |
+          Es gibt mehr als eine richtige Zeichnung. Die App prüft nicht jeden Punkt, sondern ob dein Diagramm zum Ort passt:
+          die Durchschnittstemperatur im ganzen Jahr, die Spanne zwischen Sommer und Winter, den wärmsten und kältesten Monat, die Menge an
+          Niederschlag, die Zahl der feuchten Monate und die Jahreszeit, in der es regnet. Wenn etwas nicht passt, bekommst du
+          eine Frage, die dir einen Hinweis gibt.
+      - type: text
+        text: |
+          Als Maßstab helfen dir die Vergleichsorte der Seite [Typische Orte der Klimazonen](/europa/zonen-orte/): Athen,
+          Brest, Moskau, Tromsø und die Zugspitze. Schau dir ihre Diagramme noch einmal an und überlege, welchem dein Ort
+          ähnelt. Die Achsen sind für alle Orte gleich: links von −20 bis 70 °C, rechts von 0 bis 300 mm. Ab 100 mm rückt die
+          rechte Achse enger zusammen, und die Säulen darüber sind dunkelblau.
+      - type: text
+        text: |
+          Du musst nicht jeden Wert treffen: Die Durchschnittstemperatur darf bis zu 4 °C, die Spanne bis zu 6 °C und der
+          Jahresniederschlag bis zu 30 % abweichen. Wärmster und kältester Monat dürfen um einen Monat danebenliegen.
+      - type: note
+        title: Vorsicht, Falle
+        blocks:
+          - type: text
+            text: |
+              Ein Verlauf, der zu den Hinweisen passt, aber nicht genau dem echten Diagramm gleicht, kann durchgehen. Das ist
+              Absicht: Du sollst die Zusammenhänge verstehen, nicht Zahlen auswendig lernen.
+  - type: section
+    id: beispiel
+    title: Ein Ort im Kopf
+    blocks:
+      - type: example
+        title: Ein Ort direkt am Atlantik auf 50 °N
+        blocks:
+          - type: text
+            text: |
+              Ein Ort liegt direkt am Atlantik in Westeuropa, im Flachland. Weil er am Meer liegt, ist die Spanne klein:
+              kühle Sommer, milde Winter. Der Westwind bringt das ganze Jahr Niederschlag, die Säulen liegen über der Linie, es
+              gibt keine ariden Monate. Du zeichnest also eine flache Temperaturlinie mit dem Maximum im Sommer und
+              ziemlich hohe Säulen in allen zwölf Monaten.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: single-choice
+        id: detektiv-1
+        text: Zwei Orte liegen auf gleicher Breite. Der eine direkt am Atlantik, der andere tief im Landesinneren. Welcher hat die größere Temperaturspanne zwischen Sommer und Winter?
+        options:
+          - text: der Ort im Landesinneren
+            correct: true
+            info: Ohne Meer als Wärmespeicher wird es im Sommer heiß und im Winter kalt.
+          - text: der Ort am Atlantik
+            correct: false
+            info: Das Meer gleicht Sommer und Winter aus, die Spanne ist dort klein.
+          - text: beide gleich
+            correct: false
+            info: Die Entfernung zum Meer ist der Grund für den Unterschied, auch bei gleicher Breite.
+        explanation: Das Meer speichert Wärme. Weit davon entfernt ist die Spanne groß.
+        links:
+          - title: Seeklima (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Seeklima
+      - type: single-choice
+        id: detektiv-2
+        text: Ein Ort liegt auf 2500 m Höhe in den Alpen. Wie ist seine Temperatur im Vergleich zu einem Ort auf gleicher Breite im Tal?
+        options:
+          - text: niedriger, weil es mit der Höhe kälter wird
+            correct: true
+            info: In großer Höhe liegt die Linie im ganzen Jahr tiefer.
+          - text: höher, weil man näher an der Sonne ist
+            correct: false
+            info: Näher an der Sonne ist man kaum. Entscheidend ist die dünnere, kältere Luft.
+          - text: gleich, weil die Breite gleich ist
+            correct: false
+            info: Die Breite ist nicht der einzige Grund. Auch die Höhe spielt eine Rolle.
+        explanation: Mit zunehmender Höhe wird es kälter.
+        links:
+          - title: Europa (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Europa
+      - type: text
+        text: |
+          Jetzt der Fall. Mit dem Pfeil-Knopf neben „Aufgabe Nr.“ unter der Übung bekommst du einen anderen Ort. Du kannst die
+          Hinweise unter dem Achsenkreuz noch einmal lesen.
+      - type: vue-component
+        id: detektiv-3
+        component: KlimaDetektiv
+        props:
+          orte: { data: orte }
+          texte: { data: detektivtexte }
+          anzeige: { data: detektivanzeige }
+        examples:
+          accepted:
+            - seed: 1
+              answer:
+                {
+                  t: [0.7, 0.6, 1.2, 3.7, 6.7, 9.8, 11.6, 11, 8.5, 4.9, 2.2, 0.8],
+                  n: [87, 91, 81, 59, 53, 43, 50, 64, 87, 80, 86, 95],
+                }
+            - seed: 4
+              answer:
+                {
+                  t: [8.6, 8.6, 10.1, 11.6, 14.3, 16.8, 18.5, 18.6, 16.9, 14.3, 11.3, 9.2],
+                  n: [157, 131, 90, 101, 83, 72, 78, 83, 87, 142, 162, 171],
+                }
+            - seed: 10
+              answer:
+                {
+                  t: [-10.3, -11.1, -9.1, -6.4, -2.4, 1.4, 3.2, 3.6, 0.4, -2.1, -6.2, -9.4],
+                  n: [176.5, 157.4, 208.1, 171.7, 192.7, 181.4, 184.5, 184.6, 150.2, 127.6, 157.4, 183.3],
+                }
+          rejected:
+            - seed: 1
+              answer:
+                {
+                  t: [11.6, 11, 8.5, 4.9, 2.2, 0.8, 0.7, 0.6, 1.2, 3.7, 6.7, 9.8],
+                  n: [87, 91, 81, 59, 53, 43, 50, 64, 87, 80, 86, 95],
+                }
+            - seed: 1
+              answer:
+                {
+                  t: [5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1],
+                  n: [87, 91, 81, 59, 53, 43, 50, 64, 87, 80, 86, 95],
+                }
+            - seed: 1
+              answer:
+                {
+                  t: [10.2, 10.7, 12.4, 15.7, 20.6, 25.3, 28.1, 28.5, 24.3, 20, 15.4, 12],
+                  n: [46, 37, 41, 26, 15, 9, 7, 3, 16, 34, 63, 62],
+                }
+            - seed: 4
+              answer:
+                {
+                  t: [17, 17.1, 15.4, 12.8, 9.8, 7.7, 7.1, 7.1, 8.6, 10.1, 12.8, 15.3],
+                  n: [143, 119, 82, 92, 75, 65, 71, 75, 79, 129, 147, 155],
+                }

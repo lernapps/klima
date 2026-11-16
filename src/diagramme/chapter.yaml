@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Klimadiagramme knacken
+summary: Ein Klimadiagramm erzählt dir, wie warm und wie nass ein Ort im Jahr ist. Du lernst, es zu lesen.
+pages: [lesen, humid-arid, zeichnen]
+selfAssessment:
+  pages:
+    - exercises:
+        - /diagramme/humid-arid/#humid-arid-1
+        - /diagramme/humid-arid/#humid-arid-5
+        - /diagramme/humid-arid/#humid-arid-5
+    - exercises:
+        - /diagramme/zeichnen/#zeichnen-1
+        - /diagramme/zeichnen/#zeichnen-2
+        - /diagramme/zeichnen/#zeichnen-3

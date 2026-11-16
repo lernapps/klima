@@ -1,0 +1,186 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Feucht oder trocken? Humid und arid
+description: Du erkennst an einem Klimadiagramm, welche Monate feucht (humid) und welche trocken (arid) sind.
+competencies: [klimadiagramm-lesen]
+blocks:
+  - type: section
+    id: einstieg
+    title: Warum ist Lissabon im Sommer so trocken?
+    blocks:
+      - type: text
+        text: |
+          Lissabon und Bergen liegen beide am Atlantik. Im Juli fallen in Lissabon aber nur etwa 2 mm Niederschlag, in
+          Bergen dagegen über 150 mm. Wie sieht ein Diagramm aus, in dem es im Sommer richtig trocken ist? Und woran
+          erkennst du es?
+      - type: text
+        text: |
+          **Das kannst du danach:** Du erkennst im Klimadiagramm, welche Monate feucht (humid) und welche trocken (arid)
+          sind, und du beschreibst damit das Klima eines Ortes. Davor hast du gelernt, Temperatur und Niederschlag
+          abzulesen.
+  - type: section
+    id: erklaerung
+    title: Säule über der Linie oder darunter
+    blocks:
+      - type: text
+        text: |
+          Bei Wärme verdunstet mehr Wasser. Darum reicht dieselbe Regenmenge im warmen Juli nicht aus, um den Monat
+          feucht zu halten, im kühlen Januar schon. Im Klimadiagramm sieht man das daran, ob die Säule höher oder
+          niedriger ist als die rote Linie.
+      - type: definition
+        term: humid
+        explanation: Ein Monat ist humid (feucht), wenn die Niederschlagssäule über der Temperaturlinie endet.
+      - type: definition
+        term: arid
+        explanation: Ein Monat ist arid (trocken), wenn die Niederschlagssäule unter der Temperaturlinie endet.
+      - type: text
+        text: |
+          Das klappt nur, weil die Achsen immer gleich gestellt sind: 10 °C stehen auf derselben Höhe wie 20 mm. Ein
+          Monat ist also humid, wenn der Niederschlag in mm größer ist als das Doppelte der Temperatur in °C.
+      - type: text
+        text: |
+          Probiere es aus: Schalte unter dem Diagramm von Lissabon die feuchten und trockenen Monate ein. Feuchte
+          Monate bekommen einen blauen Hintergrund. Trockene Monate sind gelb gepunktet. Tippe außerdem auf Monate
+          und sieh dir die Werte an.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: lissabon
+          monatswerte: true
+          humidSchalter: true
+        nojs: |
+          Klimadiagramm von Lissabon. Von Oktober bis Mai liegen die Säulen über der Temperaturlinie, diese Monate
+          sind humid. Im Juni, Juli, August und September liegen die Säulen darunter, diese vier Monate sind arid.
+      - type: note
+        title: Vorsicht, Falle
+        blocks:
+          - type: text
+            text: |
+              Trocken heißt nicht: Es regnet gar nicht. Im September fallen in Lissabon etwa 36 mm. Der Monat ist
+              trotzdem arid, weil es mit rund 22 °C so warm ist, dass die Säule unter der Linie bleibt.
+  - type: section
+    id: beispiel
+    title: Ein Ort, in dem es nie trocken ist
+    blocks:
+      - type: example
+        title: Bergen in Norwegen
+        blocks:
+          - type: text
+            text: |
+              In Bergen liegen die Säulen in jedem Monat weit über der Linie. Sogar im Sommer fallen über 100 mm, und
+              die Temperatur ist mit 14 bis 16 °C niedrig. Bergen hat deshalb keinen einzigen ariden Monat.
+              Lissabon dagegen hat vier aride Monate im Sommer. So unterscheiden sich die beiden Orte im Klima, auch
+              wenn beide am Meer liegen.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: text
+        text: |
+          Jetzt Athen in Griechenland. Hier kannst du die Monate nicht einfärben: Du musst selbst vergleichen, ob die
+          Säule über oder unter der Linie endet.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: athen
+        nojs: |
+          Klimadiagramm von Athen. Die Temperatur ist im Sommer am höchsten. Die Niederschlagssäulen sind im Sommer
+          sehr niedrig und im Winter höher.
+      - type: true-false
+        id: humid-arid-1
+        text: "Ein Monat ist humid, wenn die Niederschlagssäule über der roten Linie endet."
+        answer: true
+        explanation: "Über der Linie heißt: Es fällt mehr Niederschlag, als bei dieser Temperatur verdunstet. Der Monat ist humid."
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: multiple-choice
+        id: humid-arid-2
+        text: Welche Monate sind in Athen arid? Mehrere Antworten sind richtig.
+        options:
+          - text: Juli
+            correct: true
+            info: Im Juli ist es mit etwa 28 °C sehr warm, und es fallen nur etwa 7 mm. Die Säule ist winzig, der Monat ist arid.
+          - text: Mai
+            correct: true
+            info: Im Mai liegen die Säule bei etwa 15 mm und die Linie bei etwa 21 °C. Die Säule ist niedriger, der Monat ist arid.
+          - text: Januar
+            correct: false
+            info: Im Januar fallen etwa 46 mm bei nur etwa 10 °C. Die Säule liegt über der Linie, der Monat ist humid.
+          - text: November
+            correct: false
+            info: Im November fallen etwa 63 mm bei etwa 15 °C. Die Säule liegt über der Linie, der Monat ist humid.
+        explanation: Athen hat trockene Sommer und feuchte Winter. Humid sind die Monate, in denen die Säule über der Linie endet.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: single-choice
+        id: humid-arid-3
+        text: Was beschreibt das Klima von Athen am besten?
+        options:
+          - text: trockener Sommer, feuchter Winter
+            correct: true
+            info: Im Sommer liegt die Säule unter der Linie, im Winter darüber.
+          - text: feuchter Sommer, trockener Winter
+            correct: false
+            info: Das wäre umgekehrt. In Athen ist es im Sommer am wärmsten und am trockensten.
+          - text: das ganze Jahr feucht
+            correct: false
+            info: Im Sommer ist die Säule sehr niedrig und liegt unter der Linie.
+          - text: das ganze Jahr trocken
+            correct: false
+            info: Im Winter ist die Säule höher als die Linie. Dann sind die Monate humid.
+        explanation: Mit humid und arid beschreibst du das Klima eines Ortes. Athen hat einen trockenen Sommer und einen feuchten Winter.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: generated
+        id: humid-arid-5
+        given:
+          t: { int: [6, 28] }
+        task:
+          text: "Ein Monat ist humid, wenn der Niederschlag in mm größer ist als das Doppelte der Temperatur in °C. Bei {{t}} °C liegt die Grenze zwischen humid und arid bei einem Niederschlag von wie vielen mm?"
+        answer:
+          value: "2 * t"
+          compare: { number: { format: integer, tolerance: 0, unit: "mm" } }
+        mistakes:
+          - {
+              value: "t / 2",
+              message: "Du hast die Temperatur halbiert. Die Grenze liegt bei dem Doppelten: 10 °C stehen auf gleicher Höhe wie 20 mm.",
+            }
+          - {
+              value: "t",
+              message: "Du hast die Zahl der Temperatur übernommen. In mm ist die Grenze doppelt so groß wie in °C.",
+            }
+        hint: "10 °C stehen im Diagramm auf gleicher Höhe wie 20 mm. Wie viele mm sind dann 1 °C?"
+        steps:
+          - "Die Achsen sind so gestellt, dass 10 °C auf gleicher Höhe liegen wie 20 mm. Also steht 1 °C für 2 mm."
+          - "Bei {{t}} °C ist die Grenze deshalb {{t}} · 2 = {{answer}} mm."
+      - type: text
+        text: |
+          Und noch ein Ort mit Namen: Bergen in Norwegen.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: bergen
+        nojs: |
+          Klimadiagramm von Bergen. Die Niederschlagssäulen sind in allen Monaten sehr hoch, die Temperaturlinie ist
+          niedrig.
+      - type: number
+        id: humid-arid-4
+        text: Wie viele aride Monate hat Bergen im Jahr?
+        answer: 0
+        tolerance: 0
+        mistakes:
+          - answer: 3
+            message: "Prüfe die Sommermonate noch einmal: Auch im Juli und August sind die Säulen viel höher als die rote Linie. Bergen ist im Sommer nicht trocken."
+        hint: Vergleiche in jedem Monat die Säule mit der roten Linie.
+        explanation: In Bergen endet die Säule in jedem Monat über der Linie. Es gibt keinen ariden Monat.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" font-family="sans-serif" font-size="14">
+<title>Skizze Frage mit Europakarte (Material)</title>
+<rect width="640" height="420" fill="#fff" stroke="#999"/>
+<text x="20" y="28" font-weight="bold">Wo liegt der Ort zu diesem Diagramm?</text>
+<rect x="20" y="40" width="300" height="150" fill="#f4f8fc" stroke="#69c"/><text x="30" y="64" fill="#555">Klimadiagramm ohne Ortsnamen</text>
+<rect x="340" y="40" width="280" height="260" fill="#eef7ee" stroke="#6a6"/><text x="350" y="64" fill="#555">Umriss Europas mit Markern A–E (labelled-figure)</text>
+<g fill="#c33"><circle cx="430" cy="120" r="9"/><circle cx="470" cy="200" r="9"/><circle cx="560" cy="140" r="9"/><circle cx="400" cy="250" r="9"/><circle cx="520" cy="90" r="9"/></g>
+<g fill="#fff" font-weight="bold"><text x="425" y="125">A</text><text x="465" y="205">B</text><text x="555" y="145">C</text><text x="395" y="255">D</text><text x="515" y="95">E</text></g>
+<text x="20" y="230" font-weight="bold">Antworten (single-choice)</text>
+<text x="20" y="254">○ A   ○ B   ○ C   ○ D   ○ E</text>
+<text x="20" y="290" fill="#a22">Falsch: "Das Diagramm hat milde Winter und mäßig Regen. B liegt weit im Osten."</text>
+<text x="20" y="320" fill="#555">Gleiche Marker auf der Seite "Klimazonen: Überblick" (labelled-figure)</text>
+</svg>
