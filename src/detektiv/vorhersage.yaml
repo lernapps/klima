@@ -33,7 +33,7 @@ blocks:
           - **Mittelmeer:** Im Süden ist der Sommer trocken. Die Säulen liegen dann unter der Linie.
       - type: text
         text: |
-          Es gibt mehr als eine richtige Zeichnung. Die App prüft nicht jeden Punkt, sondern ob dein Diagramm zum Ort passt:
+          Es gibt mehr als eine plausible Zeichnung. Die App prüft nicht jeden Punkt, sondern ob dein Diagramm zum Ort plausibel ist:
           die Durchschnittstemperatur im ganzen Jahr, die Spanne zwischen Sommer und Winter, den wärmsten und kältesten Monat, die Menge an
           Niederschlag, die Zahl der feuchten Monate und die Jahreszeit, in der es regnet. Wenn etwas nicht passt, bekommst du
           eine Frage, die dir einen Hinweis gibt.
