@@ -160,12 +160,21 @@ title: Klima in Europa
 subject: erdkunde
 strand: erdkunde/klima
 grades: [6]
-summary: Du lernst, was Klima ist, und liest, zeichnest und deutest Klimadiagramme von Orten in Europa. Mit Karte und Übungen findest du heraus, warum es im Westen milder ist als im Osten.
-keywords: [Klimadiagramm, Klima, Europa, Wetter, Klimazonen, Seeklima, Landklima]
+summary: >-
+  Was ist Klima, und warum ist es im Westen Europas milder als im Osten? Die Lernenden lesen Klimadiagramme von Orten
+  in Europa, zeichnen eigene und finden als Klimadetektive heraus, wie das Klima eines Ortes aussieht. Auf jeder Seite
+  üben sie selbst.
+url: https://lernapps.net/klima/
+keywords: [Klimadiagramm, Klima, Europa, Wetter, Klimazonen, Seeklima, Landklima, humid arid]
+creator: { name: "Oliver", url: "https://github.com/mrsimpson" }
+source: https://github.com/lernapps/klima
+commit: 04c6177d57be42832f0aec59b62ab1e816af2f33
 fitness:
   account: false
   install: false
-  storage: none
+  storage: device
+  thirdParty: none
+  checked: false
 ```
 
 ### Completed
@@ -304,20 +313,27 @@ In `.vibe/sketches/`: `01-klimadiagramm-lesen.svg` (Seite), `02-zeichnen-kompone
 - [x] An explainer: load skill `lernapps-explainer-self-assessment` (missing → `npx --no -- lernapps skills --archetype
       explainer`). Add the self-assessment as it says, or
       write under "Key decisions" why the app has none. Commit; the hooks check.
-- [ ] Load skill `lernapps-github`. Repo and Pages as it says: ask the repo name and every click only the creator can
+- [x] Load skill `lernapps-github`. Repo and Pages as it says: ask the repo name and every click only the creator can
       make in one message.
+      Das Projekt `lernapps/klima` war schon da, Pages und die Freischaltung hat der Creator selbst gemacht: Der Push aus dem Codespace scheiterte (403, der Codespace-Schlüssel gilt nur für sein eigenes Projekt), also lud der Creator die App als ZIP über die Webseite hoch.
 - [ ] Push `work`, open the preview pull request, see its checks to green as the skill says.
+      Offen: Es gab keine Vorschau und keinen Pull Request. Der Creator hat die App direkt auf `main` hochgeladen (Upload als ein Commit, `04c6177`).
 - [ ] **Checkpoint:** publish. Show what the app does and the preview link from the comment "Vorschau der App"; ask
       whether it may go online; put any open click into the same question. Wait for the yes.
+      Nicht wie beschrieben gelaufen: Der Creator hat ohne Vorschau veröffentlicht ("Ab ins Netz"); live unter https://lernapps.net/klima/.
 - [ ] Load skill `lernapps-commit`. Publish as skill `lernapps-github` says: `work` into `main` as one squash commit
       with the message from this plan, the run of `Pages` watched to the end.
-- [ ] Open the address the job `deploy` printed; confirm the app shows. Use that address, never a derived one.
-- [ ] Load skill `lernapps-listing`. Complete the entry draft (e.g. the address).
-- [ ] Fill the retrospective.
+      Offen: Die Veröffentlichung war ein Upload des Creators, kein Squash aus `work`; die Nachricht kam aus dem Plan (Skill `lernapps-commit`).
+- [x] Open the address the job `deploy` printed; confirm the app shows. Use that address, never a derived one.
+      Geprüft am 2026-11-16: https://lernapps.net/klima/ antwortet mit 200 und dem Titel "Klima in Europa".
+- [x] Load skill `lernapps-listing`. Complete the entry draft (e.g. the address).
+- [x] Fill the retrospective.
 - [ ] Commit this plan on `main` and push it: the listing check and the review read it there.
+      Offen: Der Codespace darf nicht pushen. Der Creator lädt `.vibe/plans/01-klima.md` selbst auf `main` von `lernapps/klima` hoch.
 - [ ] **Checkpoint:** list. Open the listing pull request as the skill says, without asking first: the pull request
       is the review. See it to "bestanden", then show the creator the pull request and its result; change nothing in
       it without their word.
+      Offen: Der Eintrag ist geschrieben und lokal geprüft ("bestanden"). Den Pull Request aus einem Fork konnte der Codespace nicht öffnen (kein Push-Zugriff); der Creator legt ihn über die Webseite an oder nutzt das Formular.
 - [ ] Plan changed since its last push → commit it on `main`, push again.
 
 ### Completed
@@ -328,12 +344,17 @@ In `.vibe/sketches/`: `01-klimadiagramm-lesen.svg` (Seite), `02-zeichnen-kompone
 
 ### Phases reached
 
-<!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+Commit erreicht. Checkpoints Recherche (geändert, dann bestätigt), Plan (bestätigt), Musterseite (mit Änderungswünschen bestätigt) bestanden. Veröffentlicht vom Creator per Upload, ohne Vorschau. Eintrag lokal geprüft ("bestanden"); der Pull Request an `lernapps/apps` steht noch aus.
 
 ### Creator turns after the plan
 
-<!-- Number of creator messages after the confirmation, topic of each. Target: at most 3. -->
+Neun Nachrichten nach der Bestätigung des Plans: Rückmeldung zur Musterseite (Monatsknöpfe, Fehlermeldung, Denkfrage), "weitermachen", Veröffentlichen, dann sechs zu GitHub (Ort der App, Name, ZIP, Ursache des Push-Fehlers, Commit-Nachricht, Eintragen). Das Ziel von drei wurde wegen des Push-Zugriffs deutlich überschritten.
 
 ### Where I had to guess
 
-<!-- Each gap in plan, skills, messages or answers, and your choice. "None" if none. -->
+- Bundesland und Schulform fehlten: KMK-Standards, die es für Erdkunde nicht gibt; Aufbau nach der Lernlandkarte.
+- Sprache nur Deutsch, Anrede "du", Detektivrahmen, Aussehen ruhig wie ein Arbeitsblatt.
+- Zehn Orte: Rom und Kiruna entfielen (Datenlage); Madrid zählt zum Mittelmeerklima, obwohl es auf einer Hochebene liegt.
+- Klimadaten teils selbst aus Monatswerten gemittelt (Reykjavik, NOAA-Orte); Nutzungsbedingungen von DWD und Isländischem Wetterdienst nicht bestätigt.
+- Orte einer Zone dürfen beim Klimadetektiv füreinander durchgehen; Toleranzen nach dem Lernenden-Check geweitet.
+- Der Codespace durfte nicht pushen; deshalb Upload als ZIP und kein Squash aus `work`.
