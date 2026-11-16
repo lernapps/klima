@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Wetter oder Klima?
+summary: Du lernst den Unterschied zwischen Wetter und Klima und misst selbst Temperatur und Niederschlag.
+pages: [wetter-und-klima, wetter-messen]
+selfAssessment:
+  pages:
+    - exercises:
+        - /wetter-klima/wetter-und-klima/#wetter-klima-1
+        - /wetter-klima/wetter-und-klima/#wetter-klima-2
+    - exercises:
+        - /wetter-klima/wetter-messen/#wetter-messen-2
+        - /wetter-klima/wetter-messen/#wetter-messen-3
+        - /wetter-klima/wetter-messen/#wetter-messen-4

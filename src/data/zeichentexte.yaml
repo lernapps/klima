@@ -1,0 +1,11 @@
+# The texts of the exercise "Klimadiagramm zeichnen" (component ZeichneDiagramm): the messages for wrong answers of its logic.
+# The texts of its screen are in zeichenanzeige.yaml.
+- task: "Zeichne das Klimadiagramm von {ort}. Die Werte stehen in der Tabelle, die Achsen sind schon eingezeichnet."
+  fehlt: "Im {monat} fehlt noch ein Wert: {reihe}. Zeichne zuerst alle zwölf Monate."
+  saeulenHalb: "Deine Säulen sind nur halb so hoch, wie die Tabelle sagt. Der Niederschlag gehört an die rechte Achse. Dort stehen die doppelten Zahlen: 10 °C auf der linken Achse liegen auf gleicher Höhe wie 20 mm auf der rechten."
+  vertauscht: "Die Zahlen sind vertauscht. In der Spalte Temperatur steht die Temperatur in °C, in der Spalte Niederschlag die Menge in mm. Lies die Überschriften der Tabelle noch einmal."
+  temperaturFalsch: "Im {monat} passt die Temperatur nicht zur Tabelle. Schau dir die Spalte Temperatur noch einmal an."
+  niederschlagFalsch: "Im {monat} passt der Niederschlag nicht zur Tabelle. Schau dir die Spalte Niederschlag noch einmal an und lies die rechte Achse."
+  reiheTemperatur: "Temperatur"
+  reiheNiederschlag: "Niederschlag"
+  monate: [Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]

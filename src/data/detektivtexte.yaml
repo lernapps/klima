@@ -1,0 +1,20 @@
+# The texts of the exercise "Klimadetektiv" (component KlimaDetektiv): its task and the messages for wrong answers.
+# Each message asks a question and names no value. The texts of its screen are in detektivanzeige.yaml.
+- task: "Wie sieht das Klimadiagramm für {ort} aus?"
+  hinweise: "Hinweise: Breite {breite} °N, Höhe der Station {hoehe} m, Lage: {lage}."
+  fehlt: "Im {monat} fehlt noch ein Wert: {reihe}. Zeichne zuerst alle zwölf Monate."
+  vertauscht: "Prüfe deine Temperaturen: Eine Monatstemperatur über 45 °C gibt es in Europa nicht. Hast du Zahlen für den Niederschlag in die Temperatur eingetragen?"
+  mittelZuWarm: "Dein Diagramm ist für {ort} insgesamt zu warm. Schau dir noch einmal Breite, Höhe und die Nähe zum Meer an. Was heißt das für die Temperaturen?"
+  mittelZuKalt: "Dein Diagramm ist für {ort} insgesamt zu kalt. Schau dir noch einmal die Breite und die Lage an. Ist es dort wirklich das ganze Jahr so kalt?"
+  spanneZuGross: "Bei dir ist der Unterschied zwischen dem wärmsten und dem kältesten Monat für {ort} zu groß. Liegt der Ort am Meer? Was macht das Meer mit Sommer und Winter?"
+  spanneZuKlein: "Bei dir ist der Unterschied zwischen dem wärmsten und dem kältesten Monat für {ort} zu klein. Liegt der Ort weit vom Meer? Was passiert dort im Sommer und im Winter?"
+  warmsterMonat: "Dein wärmster Monat passt nicht. Wann ist es in Europa am wärmsten?"
+  kaeltesterMonat: "Dein kältester Monat passt nicht. Wann ist es in Europa am kältesten?"
+  niederschlagZuViel: "Deine Säulen sind für {ort} zu hoch. Fällt dort wirklich so viel Niederschlag? Denke an die Entfernung zum Meer, an den Westwind und an die Berge. Und lies die Säulen an der rechten Achse ab."
+  niederschlagZuWenig: "Deine Säulen sind für {ort} zu niedrig. Kann es dort mehr Niederschlag geben? Denke an die Entfernung zum Meer, an den Westwind und an die Berge. Und lies die Säulen an der rechten Achse ab, dort stehen die doppelten Zahlen."
+  humideZuViele: "Du hast zu viele feuchte Monate gezeichnet. Gibt es dort eine Jahreszeit, in der es trocken ist? Vergleiche Säule und Linie."
+  humideZuWenige: "In deinem Diagramm sind zu viele Monate trocken. Ist es dort wirklich so lange trocken? Vergleiche Säule und Linie."
+  jahreszeitRegen: "Bei dir fällt der Regen in anderen Jahreszeiten als dort üblich. Fällt der Regen an diesem Ort eher im Sommer oder eher im Winter? Denke an die Lage."
+  reiheTemperatur: "Temperatur"
+  reiheNiederschlag: "Niederschlag"
+  monate: [Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]

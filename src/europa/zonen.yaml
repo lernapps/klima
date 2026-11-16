@@ -1,0 +1,168 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Klimazonen im Überblick
+description: Du nennst die Klima- und Vegetationszonen Europas und zeigst sie auf einer Karte.
+competencies: [klimazonen-europas]
+blocks:
+  - type: section
+    id: einstieg
+    title: Von Athen nach Tromsø
+    blocks:
+      - type: text
+        text: |
+          Stell dir eine Reise quer durch Europa vor: im Sommer in Athen mit Sonnenhut, im Winter in Tromsø mit Skianzug.
+          Unterwegs ändern sich nicht nur das Wetter und der Koffer. Auch die Pflanzen sind ganz anders: Olivenbäume im
+          Süden, Fichtenwälder im Norden.
+      - type: text
+        text: |
+          **Das kannst du danach:** Du nennst die Klimazonen Europas mit ihren typischen Pflanzen und zeigst sie auf einer
+          Karte. Vorher hast du gelernt, wie Meer und Land das Klima beeinflussen. Wenn du die Lage der Länder und Meere
+          Europas noch üben willst, schau dir
+          [die Europakarte auf der Lernlandkarte](https://lernapps.net/apps/map/erdkunde/c/topographie-europa/) an.
+  - type: section
+    id: erklaerung
+    title: Fünf Zonen auf einer Karte
+    blocks:
+      - type: text
+        text: |
+          Die Karte zeigt fünf typische Orte als Marker. Jeder steht für eine Zone. Die Zonen haben keine scharfen
+          Grenzen: Sie gehen ineinander über.
+      - type: labelled-figure
+        image: images/europa.svg
+        alt: Karte von Europa mit fünf Markierungen. A liegt im Südosten am Mittelmeer, B an der Westküste Frankreichs, C im Osten, D im hohen Norden und E in den Alpen.
+        caption: Fünf typische Orte stehen für fünf Klimazonen. Norden ist oben.
+        source: eigene Karte nach Natural-Earth-Daten (naturalearthdata.com)
+        licence: gemeinfrei
+        labels:
+          - { marker: A, x: 68.3, y: 87.4, text: "Athen: Mittelmeerklima" }
+          - { marker: B, x: 34.5, y: 60.2, text: "Brest: ozeanisches Klima" }
+          - { marker: C, x: 77.2, y: 41.3, text: "Moskau: Kontinentalklima" }
+          - { marker: D, x: 58.0, y: 13.9, text: "Tromsø: kalter Norden" }
+          - { marker: E, x: 51.6, y: 66.2, text: "Zugspitze: Hochgebirge" }
+      - type: table
+        caption: Die Klimazonen Europas und ihre Pflanzen
+        rowHeaders: true
+        header: [Zone, Klima, Typische Pflanzen]
+        rows:
+          - [
+              "Mittelmeerklima",
+              "Sommer trocken und sehr warm, Winter mild mit Regen",
+              "Hartlaubwälder und Macchie, in warmen Lagen Olivenbäume",
+            ]
+          - [
+              "Ozeanisches Klima",
+              "milde Winter, kühle Sommer, fast das ganze Jahr Regen",
+              "Laubwälder, vor allem Buchen",
+            ]
+          - ["Kontinentalklima", "kalte Winter, warme bis heiße Sommer", "Mischwälder, im Süden Steppe"]
+          - ["Kalter Norden", "lange, kalte Winter, kurze Sommer", "Nadelwälder (Taiga), noch weiter nördlich Tundra"]
+          - ["Hochgebirge", "mit der Höhe immer kälter", "Wälder, dann Zwergsträucher und Rasen, Höhenstufen"]
+      - type: text
+        text: |
+          Du siehst: Das Klima bestimmt, welche Pflanzen wachsen. Im Süden mit seinen trockenen Sommern stehen
+          immergrüne Hartlaubwälder. Im Westen und in der Mitte wachsen Laubwälder, im kalten Norden Nadelwälder. Ganz im
+          Norden gibt es nur noch die **Tundra** mit Moosen, Flechten und niedrigen Sträuchern.
+      - type: definition
+        term: Vegetation
+        explanation: Die Vegetation ist die Pflanzendecke eines Gebiets, also alle Pflanzen, die dort wachsen.
+      - type: note
+        title: Vorsicht, Falle
+        blocks:
+          - type: text
+            text: |
+              Die Zonen verlaufen nicht nur von Süd nach Nord. Auch der Abstand zum Meer und die Höhe spielen eine
+              Rolle. Zwischen dem ozeanischen Westen und dem kontinentalen Osten gibt es keine scharfe Grenze: Berlin
+              liegt dazwischen.
+  - type: section
+    id: beispiel
+    title: Ein Ort, eine Zone
+    blocks:
+      - type: example
+        title: Athen
+        blocks:
+          - type: text
+            text: |
+              Athen liegt im Süden am Mittelmeer (Marker A). Im Sommer ist es dort sehr warm und trocken, im Winter mild
+              mit Regen. Das ist das Mittelmeerklima. Dazu passen Hartlaubwälder und Olivenbäume.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: single-choice
+        id: zonen-1
+        text: In welcher Zone ist es im Sommer trocken und sehr warm und im Winter mild mit Regen?
+        options:
+          - text: im Mittelmeerklima
+            correct: true
+            info: Dort wachsen Hartlaubwälder und Olivenbäume, die mit der Sommertrockenheit zurechtkommen.
+          - text: im ozeanischen Klima
+            correct: false
+            info: Im ozeanischen Klima regnet es fast das ganze Jahr, auch im Sommer.
+          - text: im Kontinentalklima
+            correct: false
+            info: Im Kontinentalklima sind die Winter kalt, nicht mild.
+          - text: im kalten Norden
+            correct: false
+            info: Im kalten Norden sind auch die Sommer kurz und kühl.
+        explanation: Trockener, sehr warmer Sommer und milder Winter mit Regen sind die Merkmale des Mittelmeerklimas.
+        links:
+          - title: Europa (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Europa
+      - type: matching
+        id: zonen-2
+        text: Ordne jeder Zone ihre typischen Pflanzen zu.
+        pairs:
+          - { left: Mittelmeerklima, right: Hartlaubwälder und Macchie }
+          - { left: Ozeanisches Klima, right: Laubwälder mit Buchen }
+          - { left: Kontinentalklima, right: Mischwälder und Steppe }
+          - { left: Kalter Norden, right: Nadelwälder und Tundra }
+          - { left: Hochgebirge, right: Höhenstufen bis zu Rasen }
+        explanation: Die Pflanzen passen zum Klima. Trockene Sommer, Meer, strenger Winter, Kälte und Höhe fördern jeweils andere Pflanzen.
+        links:
+          - title: Europa (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Europa
+      - type: matching
+        id: zonen-3
+        text: Die Marker zeigen typische Orte der Zonen. Welche Zone gehört zu welchem Marker?
+        material:
+          - type: labelled-figure
+            image: images/europa.svg
+            alt: Karte von Europa mit fünf Markierungen. A liegt im Südosten am Mittelmeer, B an der Westküste Frankreichs, C im Osten, D im hohen Norden und E in den Alpen.
+            source: eigene Karte nach Natural-Earth-Daten (naturalearthdata.com)
+            licence: gemeinfrei
+            legend: false
+            labels:
+              - { marker: A, x: 68.3, y: 87.4, text: Mittelmeerklima }
+              - { marker: B, x: 34.5, y: 60.2, text: ozeanisches Klima }
+              - { marker: C, x: 77.2, y: 41.3, text: Kontinentalklima }
+              - { marker: D, x: 58.0, y: 13.9, text: kalter Norden }
+              - { marker: E, x: 51.6, y: 66.2, text: Hochgebirge }
+        pairsFrom: material
+        explanation: Der Süden am Mittelmeer hat das Mittelmeerklima, die Westküste das ozeanische Klima, der Osten das Kontinentalklima, der hohe Norden ist kalt, und in den Alpen gilt Hochgebirgsklima.
+        examples:
+          accepted:
+            - [
+                [A, Mittelmeerklima],
+                [B, ozeanisches Klima],
+                [C, Kontinentalklima],
+                [D, kalter Norden],
+                [E, Hochgebirge],
+              ]
+          rejected:
+            - [
+                [A, ozeanisches Klima],
+                [B, Mittelmeerklima],
+                [C, Kontinentalklima],
+                [D, kalter Norden],
+                [E, Hochgebirge],
+              ]
+        links:
+          - title: Europa (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Europa
+      - type: true-false
+        id: zonen-4
+        text: "Zwischen dem ozeanischen Westen und dem kontinentalen Osten Europas gibt es eine scharfe Grenze."
+        answer: false
+        explanation: Die Zonen gehen ineinander über. Je weiter du nach Osten kommst, desto schwächer wird der Einfluss des Meeres.
+        links:
+          - title: Kontinentalklima (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Kontinentalklima

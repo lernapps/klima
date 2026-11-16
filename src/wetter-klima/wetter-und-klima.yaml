@@ -1,0 +1,129 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Wetter oder Klima?
+description: Du unterscheidest Wetter und Klima und nennst vier Wetterelemente.
+competencies: [wetter-und-klima]
+blocks:
+  - type: section
+    id: einstieg
+    title: Gewitter heute, heiß im Sommer?
+    blocks:
+      - type: text
+        text: |
+          Heute Morgen Nebel, mittags Sonne, am Abend Gewitter. Und trotzdem sagt dein Onkel: "In Spanien ist es im
+          Sommer heiß und trocken." Wie passt das zusammen? Hat er recht, obwohl es gestern dort geregnet hat?
+      - type: text
+        text: |
+          **Das kannst du danach:** Du sagst, ob eine Aussage das Wetter oder das Klima beschreibt, und du nennst vier
+          Wetterelemente. Du brauchst dafür nur das, was du aus deinem Alltag kennst: Jacke oder T-Shirt, Regenschirm,
+          Windböen.
+  - type: section
+    id: erklaerung
+    title: Wetter ist jetzt, Klima ist normal
+    blocks:
+      - type: text
+        text: |
+          Das **Wetter** ist das, was du gerade vor dem Fenster siehst: Sonne oder Regen, warm oder kalt. Es kann sich
+          mehrmals am Tag ändern.
+      - type: definition
+        term: Wetter
+        explanation: Das Wetter ist der kurzfristige Zustand der Luft an einem Ort, zum Beispiel heute Nachmittag.
+      - type: text
+        text: |
+          Das **Klima** ist etwas anderes. Es sagt, wie das Wetter an einem Ort normalerweise ist. Dafür schaut man auf
+          viele Jahre. Die Forscher rechnen meistens mit 30 Jahren und bilden den Durchschnitt.
+      - type: definition
+        term: Klima
+        explanation: Das Klima ist das übliche Wetter an einem Ort, berechnet als Durchschnitt über viele Jahre, meistens 30.
+      - type: text
+        text: |
+          Dein Onkel meint also das Klima: Im Durchschnitt vieler Sommer ist es in Spanien heiß und trocken. Dass es
+          an einem einzelnen Tag regnet, ändert daran nichts.
+      - type: text
+        text: |
+          Das Wetter beschreibt man mit vier **Wetterelementen**. Du kennst sie alle:
+          - **Temperatur:** Wie warm oder kalt ist die Luft? Du misst sie mit einem Thermometer.
+          - **Niederschlag:** Wie viel Regen, Schnee oder Hagel fällt? Du misst ihn mit einem Regenmesser.
+          - **Wind:** Wie stark weht die Luft, und woher? Du misst ihn mit einem Windmesser.
+          - **Luftdruck:** Wie stark drückt die Luft auf die Erde? Bei hohem Luftdruck ist es oft sonnig, bei niedrigem oft wolkig und regnerisch.
+      - type: note
+        title: Vorsicht, Falle
+        blocks:
+          - type: text
+            text: |
+              "Es regnet heute" ist Wetter. "In Bergen regnet es sehr oft" ist Klima. Achte auf Wörter wie *heute*,
+              *gestern*, *gerade* (Wetter) und *meistens*, *im Durchschnitt*, *im Sommer* (Klima).
+  - type: section
+    id: beispiel
+    title: Zwei Sätze über Madrid
+    blocks:
+      - type: example
+        title: Wetter oder Klima?
+        blocks:
+          - type: text
+            text: |
+              "Gestern waren es in Madrid 35 Grad." Das gilt nur für einen Tag: Das ist **Wetter**. "In Madrid ist
+              es im Sommer meistens heiß." Das gilt für viele Jahre: Das ist **Klima**.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: single-choice
+        id: wetter-klima-1
+        text: Welcher Satz beschreibt das Wetter?
+        options:
+          - text: Heute Nachmittag zieht ein Gewitter über Köln.
+            correct: true
+            info: Das gilt für einen Nachmittag. Ein kurzer Zustand der Luft ist Wetter.
+          - text: In Island ist es im Sommer meistens kühl.
+            correct: false
+            info: Das sagt, wie es normalerweise ist. Das ist Klima.
+          - text: In der Sahara regnet es sehr selten.
+            correct: false
+            info: Das gilt über viele Jahre. Das ist Klima.
+          - text: In Norwegen gibt es lange, kalte Winter.
+            correct: false
+            info: Das beschreibt das Übliche an einem Ort. Das ist Klima.
+        explanation: Wetter ist der kurze Zustand der Luft, hier ein Nachmittag. Die anderen Sätze beschreiben das Klima.
+        links:
+          - title: Wetter (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Wetter
+      - type: multiple-choice
+        id: wetter-klima-2
+        text: Welche Aussagen beschreiben das Klima? Mehrere Antworten sind richtig.
+        options:
+          - text: Im Durchschnitt fällt in Bergen über das Jahr sehr viel Regen.
+            correct: true
+            info: Das ist ein Durchschnitt über viele Jahre. Das ist Klima.
+          - text: Gestern hat es in Berlin den ganzen Tag geregnet.
+            correct: false
+            info: Das gilt für einen Tag. Das ist Wetter.
+          - text: In Spanien sind die Sommer meistens heiß und trocken.
+            correct: true
+            info: Das Wort "meistens" zeigt, dass viele Sommer gemeint sind. Das ist Klima.
+          - text: Morgen soll in München die Sonne scheinen.
+            correct: false
+            info: Eine Vorhersage für einen Tag ist Wetter.
+        explanation: Klima beschreibt das Übliche über viele Jahre. Einzelne Tage sind Wetter.
+        links:
+          - title: Klima (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klima
+      - type: matching
+        id: wetter-klima-3
+        text: Ordne jedem Wetterelement die Frage zu, die es beantwortet.
+        pairs:
+          - { left: Temperatur, right: "Wie warm oder kalt ist die Luft?" }
+          - { left: Niederschlag, right: "Wie viel Regen oder Schnee fällt?" }
+          - { left: Wind, right: "Wie stark weht die Luft, und woher?" }
+          - { left: Luftdruck, right: "Wie stark drückt die Luft auf die Erde?" }
+        explanation: Diese vier Wetterelemente beschreiben zusammen, wie das Wetter an einem Ort gerade ist.
+        links:
+          - title: Wetter (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Wetter
+      - type: true-false
+        id: wetter-klima-4
+        text: "Letzten Sommer war es in Berlin zwei Wochen lang sehr heiß. Darum ist das Klima in Berlin heiß."
+        answer: false
+        explanation: Zwei heiße Wochen sind Wetter. Für das Klima rechnet man den Durchschnitt über etwa 30 Jahre.
+        links:
+          - title: Klima (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klima

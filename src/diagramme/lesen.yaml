@@ -1,0 +1,195 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Ein Klimadiagramm lesen
+description: Du liest an einem Klimadiagramm ab, wie warm es ist und wie viel Niederschlag fällt.
+competencies: [klimadiagramm-lesen]
+blocks:
+  - type: section
+    id: einstieg
+    title: Reykjavik im Sommer?
+    blocks:
+      - type: text
+        text: |
+          Stell dir vor: In den Sommerferien fliegst du nach Reykjavik, in die Hauptstadt von Island. Packst du Badehose
+          und Sonnencreme ein? Oder Regenjacke und Mütze? Ein Klimadiagramm verrät es dir, schon vor der Reise.
+      - type: text
+        text: |
+          **Das kannst du danach:** Du liest an einem Klimadiagramm ab, wie warm es in einem Monat ist und wie viel
+          Niederschlag fällt. Auf der Seite davor hast du Wetterwerte in eine Tabelle eingetragen. Hier siehst du solche
+          Werte als Bild.
+  - type: section
+    id: erklaerung
+    title: So ist ein Klimadiagramm gebaut
+    blocks:
+      - type: text
+        text: |
+          Ein Klimadiagramm zeigt zwölf Monate, von Januar (Jan) bis Dezember (Dez). Für jeden Monat steht ein
+          Durchschnittswert aus 30 Jahren darin: Beim Juli zählt der Durchschnitt aller Julis dieser 30 Jahre. Das
+          Diagramm zeigt also nicht das Wetter eines bestimmten Jahres, sondern das **Klima**: wie es an dem Ort
+          normalerweise ist.
+      - type: definition
+        term: Klimadiagramm
+        explanation: Ein Klimadiagramm zeigt für einen Ort für jeden der zwölf Monate die Durchschnittstemperatur und den durchschnittlichen Niederschlag.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: reykjavik
+          monatswerte: true
+        nojs: |
+          Klimadiagramm von Reykjavik. Die Temperatur liegt in allen Monaten niedrig: im Februar bei etwa 0,6 °C, im
+          Juli bei etwa 11,6 °C. Der Niederschlag liegt zwischen etwa 43 mm im Juni und 95 mm im Dezember.
+      - type: text
+        text: |
+          Die **rote Linie** mit den Kreisen ist die Temperatur. Du liest sie an der **linken Achse** ab, in °C.
+          Die **blauen Säulen** sind der Niederschlag, also Regen, Schnee und Hagel zusammen. Du liest sie an der
+          **rechten Achse** ab, in mm. 1 mm bedeutet: Auf einem Quadratmeter liegt 1 Liter Wasser. Zum Ablesen gehst du
+          vom roten Kreis oder vom oberen Ende der Säule waagerecht zur Achse. Die grauen Linien im Diagramm helfen
+          dir dabei.
+      - type: text
+        text: |
+          Tippe im Diagramm auf einen Monat, auf die Säule oder auf den Monatsnamen. Der Monat bekommt einen
+          gestrichelten Rahmen, und seine Werte stehen als Text unter dem Diagramm. So kannst du prüfen, ob du die Linie und die Säule richtig abgelesen hast.
+      - type: note
+        title: Vorsicht, Falle
+        blocks:
+          - type: text
+            text: |
+              Die beiden Achsen sind so gestellt, dass 10 °C auf derselben Höhe liegen wie 20 mm. Die Höhe einer Säule
+              ist deshalb **keine** Temperatur. Eine hohe Säule heißt: Es fällt viel Niederschlag, nicht: Es ist warm.
+              Achte außerdem auf die Zahlen an den Achsen: Sie hören bei jedem Ort woanders auf. Nur das Verhältnis
+              bleibt gleich.
+  - type: section
+    id: beispiel
+    title: Ein Monat im Diagramm
+    blocks:
+      - type: example
+        title: Reykjavik im Juli
+        blocks:
+          - type: text
+            text: |
+              Der Kreis der roten Linie im Juli liegt knapp unter der 12 auf der linken Achse. Du schätzt: etwa 11 bis
+              12 °C. Beim Antippen siehst du den genauen Wert, 11,6 °C. Bei so einer Temperatur brauchst du eine Jacke,
+              zum Baden ist es zu kalt. Die Säule reicht rechts bis etwa 50 mm. Der trockenste Monat hat etwa 43 mm, der
+              nasseste etwa 95 mm: Der Juli gehört also zu den eher trockenen Monaten. Für die Reise heißt das:
+              Pullover und Regenjacke einpacken, die Badehose lieber nicht.
+  - type: section
+    id: uebung
+    title: Übung
+    blocks:
+      - type: text
+        text: |
+          Jetzt ein Diagramm ohne Namen. Du erfährst nur, dass der Ort in Europa liegt. Die Monate kannst du hier nicht
+          antippen: Du musst die Achsen lesen. Die Zahlen an den Achsen sind hier andere als bei Reykjavik. Das
+          Verhältnis von 10 °C zu 20 mm bleibt aber gleich. Die Monate stehen unter dem Diagramm: Jan, Feb, Mär und so
+          weiter.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: berlin
+          verdeckt: true
+        nojs: |
+          Klimadiagramm eines Ortes in Europa. Es zeigt eine Temperaturlinie und zwölf Niederschlagssäulen. Die
+          Temperatur ist im Winter niedrig und im Sommer am höchsten.
+      - type: text
+        text: |
+          **Denkfrage:** Wo in Europa könnte dieser Ort wohl liegen? Merke dir deine Vermutung. Auf der Seite
+          [Seeklima und Landklima](/europa/see-land/) erfährst du es.
+      - type: single-choice
+        id: lesen-1
+        text: Welches Zeichen im Diagramm zeigt die Temperatur?
+        options:
+          - text: die rote Linie mit den Kreisen
+            correct: true
+            info: Die rote Linie verbindet die Monatswerte der Temperatur. Du liest sie an der linken Achse ab.
+          - text: die blauen Säulen
+            correct: false
+            info: Die blauen Säulen zeigen den Niederschlag. Du liest sie an der rechten Achse ab, in mm.
+          - text: die grauen waagerechten Linien
+            correct: false
+            info: Die grauen Linien sind nur ein Gitter. Sie helfen dir beim Ablesen.
+          - text: die Buchstaben unter dem Diagramm
+            correct: false
+            info: Die Buchstaben sind die Anfangsbuchstaben der zwölf Monate von Januar bis Dezember.
+        explanation: Die Temperatur zeigt die rote Linie. Die blauen Säulen sind der Niederschlag.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: number
+        id: lesen-2
+        text: Wie warm ist es in diesem Ort im Juli? Bis 1 °C daneben zählt noch als richtig.
+        answer: 19.4
+        tolerance: 1
+        unit: °C
+        mistakes:
+          - answer: 38
+            message: "38 passt zur Säule im Juli, wenn du sie an der linken Achse abliest. Die Säule gehört aber zur rechten Achse (mm). Die Temperatur zeigt die rote Linie."
+          - answer: 77
+            message: 77 ist die Zahl an der rechten Achse, also Niederschlag in mm. Suche die rote Linie im Juli.
+        hint: Gehe vom roten Kreis im Juli waagerecht nach links zur Achse mit °C.
+        explanation: Der rote Kreis im Juli liegt bei etwa 19 bis 20 °C, genau sind es 19,4 °C. Im Sommer ist es dort warm.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: single-choice
+        id: lesen-3
+        text: In welchem Monat fällt in diesem Ort am meisten Niederschlag?
+        options:
+          - text: Juli
+            correct: true
+            info: Im Juli ist die Säule am höchsten, mit etwa 77 mm.
+          - text: Januar
+            correct: false
+            info: Im Januar ist die Säule mit etwa 47 mm deutlich niedriger als im Juli.
+          - text: Mai
+            correct: false
+            info: Im Mai fallen etwa 54 mm. Im Juli ist die Säule höher.
+          - text: Dezember
+            correct: false
+            info: Im Dezember fallen etwa 46 mm, ähnlich wie im Januar.
+        explanation: Die höchste Säule steht für den meisten Niederschlag. Das ist hier der Juli.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: true-false
+        id: lesen-4
+        text: "Im Diagramm oben ist die Säule im Januar höher als im Februar. Darum ist der Januar wärmer als der Februar."
+        answer: false
+        explanation: Die Säulen zeigen den Niederschlag in mm, nicht die Temperatur. Die rote Linie liegt im Januar tiefer als im Februar, der Januar ist also kälter.
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
+      - type: text
+        text: |
+          Ein neuer Ort mit seinem Namen: Du reist im August nach Madrid, in die Hauptstadt von Spanien.
+      - type: vue-component
+        component: KlimaDiagramm
+        props:
+          orte: { data: orte }
+          texte: { data: klimatexte }
+          ort: madrid
+        nojs: |
+          Klimadiagramm von Madrid. Die Temperatur ist im Sommer am höchsten, im August bei etwa 25 °C. Der
+          Niederschlag ist im Sommer sehr niedrig, im August bei etwa 10 mm.
+      - type: single-choice
+        id: lesen-5
+        text: Was packst du für den August nach Madrid ein? Lies Linie und Säule im August ab.
+        options:
+          - text: Sonnenhut und Sonnencreme
+            correct: true
+            info: Im August liegt die Linie bei etwa 25 °C, und die Säule ist sehr niedrig. Es ist warm und fast ohne Niederschlag.
+          - text: Regenjacke und Gummistiefel
+            correct: false
+            info: Im August ist die Säule fast ganz unten. Es fällt nur etwa 10 mm Niederschlag.
+          - text: Mütze und Handschuhe
+            correct: false
+            info: Die Mütze brauchst du bei Temperaturen nahe 0 °C. Im August sind es in Madrid etwa 25 °C.
+          - text: Skier und Skianzug
+            correct: false
+            info: Skier brauchst du bei Schnee. Im August liegt die Temperatur weit über 0 °C.
+        explanation: "Das Diagramm sagt dir: warm und sehr trocken. Dafür passen Sonnenhut und Sonnencreme."
+        links:
+          - title: Klimadiagramm (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Klimadiagramm
