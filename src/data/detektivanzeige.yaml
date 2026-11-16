@@ -1,6 +1,6 @@
 # The texts of the screen of the exercise "Klimadetektiv" (component KlimaDetektiv): one record.
-- task: "Wie sieht das Klimadiagramm für {ort} aus? Du bekommst nur Hinweise zur Lage. Zeichne deine Vermutung für Temperatur und Niederschlag in allen zwölf Monaten."
-  alt: "Achsenkreuz für das Klimadiagramm, in das du deine Vermutung für {ort} einträgst. Links die Temperatur in °C, rechts der Niederschlag in mm, unten die zwölf Monate."
+- task: "Wie sieht das Klimadiagramm für einen Ort in Europa aus? Du bekommst nur Hinweise zur Lage. Zeichne deine Vermutung für Temperatur und Niederschlag in allen zwölf Monaten."
+  alt: "Achsenkreuz für das Klimadiagramm, in das du deine Vermutung einträgst. Links die Temperatur in °C, rechts der Niederschlag in mm, unten die zwölf Monate."
   hinweisKopf: "Hinweise zum Ort"
   hinweisBreite: "Breite: {breite} °N"
   hinweisHoehe: "Höhe der Messstation: {hoehe} m"
@@ -22,6 +22,7 @@
   achseMm: "mm"
   keineZahl: "Das ist keine Zahl. Schreibe zum Beispiel 12 oder 12,5."
   begrenzt: "Dieser Wert liegt außerhalb des Achsenkreuzes. Ich habe ihn auf {wert} gesetzt."
-  hinweisKurz: "{ort}: Breite {breite} °N, Höhe {hoehe} m. Lage: {lage}"
+  hinweisKurz: "Breite {breite} °N, Höhe {hoehe} m. Lage: {lage}"
+  plausibel: "Das war {ort}. Dein Diagramm ist plausibel: Jahresmittel, Temperaturspanne, wärmster und kältester Monat, Jahresniederschlag, feuchte Monate und die Jahreszeit des Regens passen zum Ort. Unter „Lösung“ siehst du die Werte."
   monate: [Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
   monateKurz: [Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
