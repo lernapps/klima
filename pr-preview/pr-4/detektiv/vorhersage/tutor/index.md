@@ -64,8 +64,8 @@ Jeder Hinweis verrät dir ein Merkmal des Diagramms:
 
 Es gibt mehr als eine plausible Zeichnung. Die App prüft nicht jeden Punkt, sondern ob dein Diagramm zum Ort plausibel ist:
 die Durchschnittstemperatur im ganzen Jahr, die Spanne zwischen Sommer und Winter, den wärmsten und kältesten Monat, die Menge an
-Niederschlag, die Zahl der feuchten Monate und die Jahreszeit, in der es regnet. Wenn etwas nicht passt, bekommst du
-eine Frage, die dir einen Hinweis gibt.
+Niederschlag, die Zahl der feuchten Monate und die Jahreszeit, in der es regnet. Wenn alles passt, steht dort „Richtig!“. Das heißt hier:
+Dein Diagramm ist plausibel. Wenn etwas nicht passt, bekommst du eine Frage, die dir einen Hinweis gibt.
 
 Als Maßstab helfen dir die Vergleichsorte der Seite Typische Orte der Klimazonen: Athen,
 Brest, Moskau, Tromsø und die Zugspitze. Schau dir ihre Diagramme noch einmal an und überlege, welchem dein Ort
